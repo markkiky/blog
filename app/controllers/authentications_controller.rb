@@ -73,6 +73,7 @@ class AuthenticationsController < ApplicationController
     else
       if @response_json["status"] == 200
         # create session
+        session['user_id'] = @response_json["data"]['id']
         session["access_token"] = @response_json["access_token"]
         session["username"] = @response_json["data"]["username"]
         session["role_id"] = @response_json["data"]["role_id"]

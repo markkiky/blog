@@ -1,4 +1,6 @@
 class DashboardsController < ApplicationController
+  # before_action :current_user!
+  # console
   def index
     # byebug
     begin
@@ -13,6 +15,7 @@ class DashboardsController < ApplicationController
 
       @response_json = JSON.parse(response.read_body)
     rescue => exception
+      @data = {}
     else
       if @response_json["status"] == 200
         @data = @response_json["data"]
