@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:03 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel='icon' href='demo/img/.png' type='image/x-icon'/ >
+		<title>Reception Desk</title>
+
+		<!-- icon fonts -->
+
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_1.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_2.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_3.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_4.css">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.theme.default.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+		<link rel="stylesheet" href="assets/css/flaticon-font/flaticon.css">
+
+        <link rel="stylesheet" href="assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="assets/vendors/fullcalendar/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css">
+        <link rel="stylesheet" href="assets/vendors/dropzone/dropzone.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/trumbowyg/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css" />
+        <link rel="stylesheet" href="assets/vendors/rateyo/jquery.rateyo.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+        <!-- App styles -->
+        <link rel="stylesheet" href="assets/css/app.min.css">
+        <link rel="stylesheet" href="assets/css/daterangepicker.css">
+	
+    </head>
+
+    <body data-ma-theme="green">
+        <main class="main">
+            <%= render "layouts/page_loader" %>
+
+            <%= render "layouts/page_header" %>
+            
+			<%= render "layouts/page_sidebar" %>
+		
+            <!-- modalas -->
+            <!-- Button trigger modal -->
+           
+            <!-- Main Body -->
+			 <section class="content">
+                <header class="content__title px-0 border-0">
+				 	<div class="row" >
+						<div class="col-md-6 col-sm-12">
+							<span class="rev-title-container">
+							 <h1 class="text-capitalize stream_name m-0">My Profile</h1>
+							</span>
+							<div class="">
+								<ol class="breadcrumb border-0">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="index.html">My Account</a></li>
+									<li class="breadcrumb-item active">My Profile</li>
+								
+								</ol>
+								
+							</div>
+                        </div>
+					</div>
+                </header>
+                
+
+				<div class="row with-custom-header">	
+                        
+                    <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12">
+                            <div class="account-info">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-12 pl-0 card-title">
+                                            <h2>Account Info</h2>  
+                                        </div>
+                                        <small class="text-muted">Email address: </small>
+                                        <p>louispierce@example.com</p>                            
+                                        <hr>
+                                        <small class="text-muted">Mobile: </small>
+                                        <p>+ 202-222-2121</p>
+                                        <hr>
+                                        
+                                        <small class="text-muted">Last seen: </small>
+                                        <p class="m-b-0">October 17th, 2020</p>
+                                        <hr>
+                                        <small class="text-muted">Created</small>
+                                        <p class="m-b-0">On October 17th, 2020 by <strong>The User</strong></p>
+                                        <hr>
+                                        <small class="text-muted">Last Edited: </small>
+                                        <p class="m-b-0">January 17th, 2020 by <strong>John Doe</strong></p>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-12 pl-0 card-title">
+                                            <h2>Change Password</h2>  
+                                        </div>
+                                        <form class="row">
+                                            <div class="col-12">
+                                                <div class="form-group"> 
+                                                    <label>Previous password <strong class="text-danger">*</strong></label>
+                                                    <input type="password" class="form-control" placeholder="Enter your previous password" value="my password">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-12">
+                                                <div class="form-group"> 
+                                                    <label>New password <strong class="text-danger">*</strong></label>
+                                                    <input type="password" class="form-control" placeholder="Enter your new previous password">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group"> 
+                                                    <label>Confirm password <strong class="text-danger">*</strong></label>
+                                                    <input type="password" class="form-control" placeholder="confirm your new previous password" >
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-primary">Change password</button>
+                                            </div>
+                                        </form>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 d-flex align-items-stretch">
+                            <div class="edit-account w-100">
+                                
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="col-12 pl-0 card-title">
+                                                <h2>User Logs</h2>                            
+                                            </div>
+
+                                            <div class="table-all animated h-100 slideInRight">
+                                                <div class="table-responsive" style="height: 775px;">
+                                                <table id="data-table" class="table table-striped table-hover normal-table h-100">
+                                                    <thead class="thead-default">
+                                                        <tr>
+                                                            <th>No.</th>
+                                                               <th>Transaction Details</th>
+                                                            <th>Date & Time</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                        <tr>
+                                                           <th>No.</th>
+                                                               <th>Transaction Details</th>
+                                                            <th>Date & Time</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>HGKJLl</th>
+                                                               <th>Created a user account for <strong>The user name</strong></th>
+                                                            <th>23 Feb 2020, 10:00PM</th>
+                                                        </tr>
+                                                         <tr>
+                                                            <th>KJKJ878</th>
+                                                               <th>Blocked a biller account for <strong>45661</strong></th>
+                                                            <th>20 Feb 2020, 10:24PM</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>HGKJLl</th>
+                                                               <th>Created a user account for <strong>The user name</strong></th>
+                                                            <th>23 Feb 2020, 10:00PM</th>
+                                                        </tr>
+                                                         <tr>
+                                                            <th>KJKJ878</th>
+                                                               <th>Blocked a biller account for <strong>45661</strong></th>
+                                                            <th>20 Feb 2020, 10:24PM</th>
+                                                        </tr>
+                                                         <tr>
+                                                            <th>KJKJ878</th>
+                                                            <th>Created Bill for <strong>Acc 258655</strong></th>
+                                                            <th>20 Feb 2020, 10:24PM</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>HGKJLl</th>
+                                                               <th>Created a user account for <strong>The user name</strong></th>
+                                                            <th>23 Feb 2020, 10:00PM</th>
+                                                        </tr>
+                                                         <tr>
+                                                            <th>KJKJ878</th>
+                                                               <th>Blocked a biller account for <strong>45661</strong></th>
+                                                            <th>20 Feb 2020, 10:24PM</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>HGKJLl</th>
+                                                               <th>Created a user account for <strong>The user name</strong></th>
+                                                            <th>23 Feb 2020, 10:00PM</th>
+                                                        </tr>
+                                                         <tr>
+                                                            <th>KJKJ878</th>
+                                                               <th>Blocked a biller account for <strong>45661</strong></th>
+                                                            <th>20 Feb 2020, 10:24PM</th>
+                                                        </tr>
+                                                         <tr>
+                                                            <th>KJKJ878</th>
+                                                            <th>Created Bill for <strong>Acc 258655</strong></th>
+                                                            <th>20 Feb 2020, 10:24PM</th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               	
+                            </div>					
+                        </div>
+                            
+                        
+                    </div>
+				</div>
+			
+                <footer class="footer hidden-xs-down">
+                    <p>A product of Nouveta</p>
+                </footer>
+            </section>
+        </main>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                    <p>Sorry for the inconvenience!</p>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="assets/vendors/jquery/jquery.min.js"></script>
+        <script src="assets/vendors/popper.js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="assets/vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+        <script src="assets/vendors/flot/jquery.flot.js"></script>
+        <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="assets/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="assets/vendors/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendors/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="assets/vendors/salvattore/salvattore.min.js"></script>
+        <script src="assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+        <script src="assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+        
+		
+		 <script src="assets/vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="assets/vendors/select2/js/select2.full.min.js"></script>
+        <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="assets/vendors/trumbowyg/trumbowyg.min.js"></script>
+        <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/vendors/rateyo/jquery.rateyo.min.js"></script>
+        <script src="assets/vendors/jquery-text-counter/textcounter.min.js"></script>
+        <script src="assets/vendors/autosize/autosize.min.js"></script>
+        <script src="assets/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+
+        <!-- Charts and maps-->
+        <script src="assets/demo/js/flot-charts/curved-line.js"></script>
+        <script src="assets/demo/js/flot-charts/dynamic.js"></script>
+        <script src="assets/demo/js/flot-charts/line.js"></script>
+        <script src="assets/demo/js/flot-charts/chart-tooltips.js"></script>
+        <script src="assets/demo/js/other-charts.js"></script>
+        <script src="assets/demo/js/jqvmap.js"></script>
+		
+		<!--high chart-->
+		<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+
+		<script src="assets/vendors/highcharts/highchart.js"></script>
+		<script src="assets/vendors/highcharts/data.js"></script>
+		<script src="assets/vendors/highcharts/drilldown.js"></script>
+		<script src="assets/vendors/highcharts/exporting.js"></script>
+		<script src="assets/vendors/highcharts/export-data.js"></script>
+		<script src="assets/vendors/highcharts/accesibility.js"></script>
+		<script src="assets/js/highcharts/bullet.js"></script>
+		
+		<script src="assets/js/highcharts/highcharts-more.js"></script>
+		<script src="assets/js/highcharts/theme1.js"></script>
+		<!--owl corousel-->
+		<script src="assets/vendors/OwlCarousel/owl.carousel.min.js"></script>
+
+
+        <!-- App functions and actions -->
+     	<script src="assets/js/wow.js"></script>
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/main.js"></script>
+		
+        <script src="assets/js/chart-data/revenue-targets.js"></script>
+        <script src="assets/js/chart-data/revenue-streams.js"></script>
+		 <script src="assets/js/chart-data/revenue-by-bank.js"></script>
+        <script src="assets/js/chart-data/revenue-collected.js"></script>
+        <script src="assets/js/chart-data/perfomance.js"></script>
+
+                
+        <!-- Vendors: Data tables -->
+        <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/dataTables.buttons.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.print.min.js"></script>
+        <script src="assets/vendors/jszip/jszip.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.html5.min.js"></script>
+	
+		<!--map scripts-->
+		
+		<script src="assets/js/chart-data/map-data.js"></script>
+		
+       
+		
+		
+		
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:43 GMT -->
+</html>

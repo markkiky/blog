@@ -1,0 +1,17 @@
+<% @rooms.each do |room| %>
+    <tr>
+        <td><%= room["id"] %> </td>
+        <td><%= room["room_no"] %> </td>
+
+        <td> <%= room["room_type_description"] %></td>
+
+        <td> <%= room["created_at"].to_date %> </td>
+        <td> <%= room["updated_at"].to_date %></td>
+        <td> <%= room["created_by"] %>  </td>
+        <td>
+            <button class="btn btn-sm btn-info btn--icon-text ml-2"><i class="zmdi zmdi-edit mr-2"></i>Edit</span>
+            <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-user" title="deactvate this account"  data-toggle="modal" data-target="#deactivate-user"><i class="zmdi zmdi-block"></i>Unavailable</button>													
+        </td>
+    </tr>
+
+<% end %>

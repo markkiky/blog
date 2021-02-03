@@ -1,0 +1,164 @@
+<aside class="sidebar">
+    <div class="scrollbar-inner">
+        <div class="user">
+            <div class="user__info" data-toggle="dropdown">
+                <div class="avatar-char bg-warning text-black mr-3 font-weight-bold">JM</div>
+                <div>
+                    <div class="user__name"><%= session["username"] %></div>
+                    <div class="user__email"><%= session["email"] %></div>
+                </div>
+            </div>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="my-profile.html">View Profile</a>
+                <a class="dropdown-item d-none" href="#">Settings</a>
+                <a class="dropdown-item" href="landing-page.html">Logout</a>
+            </div>
+        </div>
+
+        <ul class="navigation">
+            <li class="navigation__active">
+            <%= link_to dashboard_path do %>
+                <i
+                    class="flaticon-bar-chart"></i>Dashboard
+            <% end %>
+            
+            </li>
+
+            <li class="navigation__sub">
+                <a href="#"><i class="mdi mdi-cash"></i>Payment edits<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                <ul>
+                    <li><a href="reversal.html"><i class="flaticon-undo mr-2"></i>Reversals</a></li>
+                    <li><a href="transfers.html"><i class="flaticon-transfer mr-2"></i>Transfers</a></li>
+                    <li><a href=""><i class="zmdi zmdi-edit mr-2"></i>Non Cash Edits</a></li>
+                </ul>
+            </li>
+            <li class="navigation__sub">
+                <a href="#"><i class="mdi mdi-room-service-outline"></i>Rooms<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                <ul>
+
+                    <li>
+                        <%= link_to check_in_path do %>
+                            <i class="mdi mdi-account-plus-outline"></i>Check In
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to check_out_path do %>
+                            <i class="mdi mdi-account-minus-outline"></i>Check Out
+                        <% end %>
+                    </li>
+                    
+                     <li>
+                        <%= link_to room_booking_path do %>
+                            <i class="mdi mdi-account-edit-outline"></i>Booking Room
+                        <% end %>
+                    </li>
+                    
+                    <li>
+                        <%= link_to available_rooms_path do %>
+                            <i class="mdi mdi-account-check-outline"></i>Available Rooms
+                        <% end %>
+                    </li>
+                    <li><a href="restaurant/occupied_rooms.html"><i class="mdi mdi-account-cash-outline"></i>Occupied Rooms</a></li>
+                    <li><a href="restaurant/unavailable_rooms.html"><i class="mdi mdi-account-cancel-outline"></i>Unavailable Rooms</a></li>
+                    <li>
+                        <%= link_to bookings_path do %>
+                            <i class="mdi mdi-account-group-outline"></i>Room Bookings
+                        <% end %>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="navigation__sub">
+                <a href="#"><i class="mdi mdi-washing-machine"></i>Laundry<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                <ul>
+                    <li><a href="restaurant/laundry/laundry-packages.html"><i class="mdi mdi-washing-machine"></i>Laundry Packages</a></li>
+                    <li><a href="restaurant/laundry/pending-laundry.html"><i class="mdi mdi-washing-machine-alert"></i>Pending Laundry</a></li>
+                    <li><a href="restaurant/laundry/done-laundry.html"><i class="mdi mdi-dishwasher"></i>Done Laundry</a></li>
+                </ul>
+            </li>
+            <li class="navigation__sub">
+                <a href="#"><i class="mdi mdi-television"></i>Amenities<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                <ul>
+                    <li><a href="restaurant/amenities/room-amenities.html"><i class="mdi mdi-television-guide"></i>Room Amenitites</a></li>
+                    <li><a href="restaurant/amenities/hotel-amenities.html"><i class="mdi mdi-monitor-screenshot"></i>Hotel Amenities</a></li>
+                </ul>
+            </li>
+            <li class="navigation__sub">
+                <a href="#"><i class="mdi mdi-credit-card-multiple-outline"></i>Bills<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                <ul>
+                    <li><a href="reversal.html"><i class="flaticon-undo mr-2"></i>Reversals</a></li>
+                    <li><a href="transfers.html"><i class="flaticon-transfer mr-2"></i>Transfers</a></li>
+                    <li><a href=""><i class="zmdi zmdi-edit mr-2"></i>Non Cash Edits</a></li>
+                </ul>
+            </li>
+                <li class="navigation__sub">
+                <a href="#"><i class="flaticon-document-1"></i>Reports<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                <ul>
+                    <li class="navigation__sub">
+                        <a href="restaurant/reports/bills.html"><i class="mdi mdi-file-document-multiple"></i>Bills<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
+                        <ul class="px-2">
+                            <li><a href="restaurant/reports/bills.html">Raised Bills</a></li>
+                            <li><a href="restaurant/reports/unpaid_bills.html">Unpaid Bills</a></li>
+                            <li><a href="restaurant/reports/partly_bills.html">Partly Bills</a></li>
+                            <li><a href="restaurant/reports/paid_bills.html">Paid Bills</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="restaurant/reports/checkin.html"><i class="mdi mdi-account-multiple-plus-outline"></i>Check In</a></li>
+                    <li><a href="restaurant/reports/checkout.html"><i class="mdi mdi-account-multiple-minus-outline"></i>Check Out</a></li>
+                    <li><a href="restaurant/reports/transfer.html"><i class="mdi mdi-account-convert-outline"></i>Transfers</a></li>
+                    <li><a href="restaurant/reports/complaints.html"><i class="mdi mdi-message-alert-outline"></i>Complaints</a></li>
+                    <li><a href="restaurant/reports/accomodation.html"><i class="mdi mdi-room-service"></i>Accomodation</a></li>
+                    <li><a href="restaurant/reports/resources.html"><i class="mdi mdi-checkbox-multiple-blank-circle-outline"></i>Resources</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="navigation__sub">
+                <a href="#"><i class="flaticon-user-2"></i>My Account <i class="zmdi zmdi-caret-down drop-down-icon pt-0"></i></a>
+                <ul>
+                    <li>
+                        <%= link_to profile_path do %>
+                            <i class="pe-7s-id mr-2"></i>My profile
+                        <% end %>
+                    </li>
+                    <li><a href="account-logs.html"><i class="icon_hourglass mr-2"></i>Account Logs</a></li>
+                    <li><a href="deligate.html"><i class="pe-7s-portfolio mr-2"></i>Delegate role</a></li>
+                    <li><a href="my-delegations.html"><i class="zmdi zmdi-case-check mr-2"></i>My Delegations</a></li>
+                    <li><a href="password.html"><i class="flaticon-forgot mr-2"></i>Change password</a></li>
+                    
+                </ul>
+            </li>
+            
+                <li class="navigation__sub d-none">
+                <a href="#"><i class="flaticon-friends"></i>User Accounts  <i class="zmdi zmdi-caret-down drop-down-icon pt-0"></i></a>
+                <ul>
+                    <li><a href="new-user.html"><i class="flaticon-add-user mr-2"></i>New user</a></li>
+                    <li><a href="active-users.html"><i class="zmdi zmdi-check-all"></i>Active users</a></li>
+                    <li><a href="blocked-users.html"><i class="zmdi zmdi-block"></i>Inactive users</a></li>
+                    <li><a href="user-management.html"><i class="zmdi zmdi-settings mr-2"></i>User Management</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="navigation__sub">
+                <a href="#"><i class="ti-settings"></i>Setup<i class="zmdi zmdi-caret-down drop-down-icon pt-0"></i></a>
+                <ul>
+                    <li><a href="restaurant/setup/general-setup.html"><i class="mdi mdi-warehouse"></i>General Setup</a></li>
+                    <li><a href="restaurant/setup/accomodation.html"><i class="mdi mdi-room-service"></i>Accomodation</a></li>
+                    <li><a href="restaurant/setup/laundry.html"><i class="mdi mdi-washing-machine"></i>Laundry</a></li>
+                    <li><a href="restaurant/setup/discounts.html"><i class="mdi mdi-cash-multiple"></i>Discounts</a></li>
+                    <li><a href="restaurant/setup/amenities.html"><i class="mdi mdi-television"></i>Amenities</a></li>
+                    <li>
+                        <%= link_to rooms_path do %>
+                            <i class="mdi mdi-room-service"></i>Rooms
+                        <% end %>
+                    </li>
+                    <li><a href="restaurant/setup/drivers.html"><i class="mdi mdi-car-seat"></i>Drivers</a></li>
+                    <li><a href="restaurant/setup/vehicle.html"><i class="mdi mdi-car-outline"></i>Vehicles</a></li>
+                </ul>
+            </li>
+                <li class="navigation__active mt-4"><a href="landing-page.html"><i class="zmdi zmdi-power"></i>Logout</a></li>
+        </ul>
+    </div>
+</aside>

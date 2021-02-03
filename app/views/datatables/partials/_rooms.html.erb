@@ -1,0 +1,12 @@
+<% @rooms.each do |room| %>
+      <tr>
+        <td><%= room["id"] %></td>
+        <td><%= room["room_name"] %></td>
+        <td><%= room["room_no"] %></td>
+        <td><%= room["room_type_description"] %></td>
+        <td><%= room["hotel_name"] %></td>
+        <td><%= room["hotel_wing"] %></td>
+        <td><%= room["room_price"] %></td>
+        
+      </tr>
+<% end %>

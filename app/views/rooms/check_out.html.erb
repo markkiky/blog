@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:03 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel='icon' href='demo/img/.png' type='image/x-icon'/ >
+		<title>Reception Desk</title>
+
+		<!-- icon fonts -->
+
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_1.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_2.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_3.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_4.css">
+		<link rel="stylesheet" href="http://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.theme.default.css">
+		<link rel="stylesheet" href="assets/css/flaticon-font/flaticon.css">
+
+        <link rel="stylesheet" href="assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="assets/vendors/fullcalendar/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="assets/vendors/dropzone/dropzone.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/trumbowyg/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css" />
+        <link rel="stylesheet" href="assets/vendors/rateyo/jquery.rateyo.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+        <!-- App styles -->
+		<link rel="stylesheet" href="assets/css/app.min.css">
+		<link rel="stylesheet" href="assets/css/daterangepicker.css">
+	
+    </head>
+
+    <body data-ma-theme="green">
+        <main class="main">
+            <%= render "layouts/page_loader" %>
+
+            <%= render "layouts/page_header" %>
+            
+			<%= render "layouts/page_sidebar" %>
+
+            <!-- Modals -->
+            <div class="modal fade" id="edit_booking_details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Booking Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <div class="form-group">
+                                    <label for="booking_code">Booking Code <strong class="text-danger">*</strong></label>
+                                    <input type="text" value="RS-202014502" id="booking_code" class="form-control posta-form validate" pattern="^[0-9']{1,100000000000000000}$" minlength="1" required placeholder="Enter postal code">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reservation_date">Date of Reservation <strong class="text-danger">*</strong></label>
+                                    <input type="text" class="form-control date-picker  dob1" value="4th Aug 2020: 12:30PM" id="reservation_date" placeholder="Enter date of reservation">
+                                    <input type="date" class="form-control hidden-md-up dob2 d-none" placeholder="Pick a date">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Reservation Type <strong class="text-danger">*</strong></label>
+                                    <select class="form-control selectpicker show-tick" data-live-search="true">
+                                        <option value="Delux">Delux</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Special">Special</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reservation_details">Reservation Details <strong class="text-danger">*</strong></label>
+                                    <input type="text" class="form-control" value="2 Beds and Kitchen" id="reservation_details" placeholder="Enter reservation details">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reservation_duration">Reservation Duration <strong class="text-danger">*</strong></label>
+                                    <input type="text" class="form-control" value="4 nights" id="reservation_duration" placeholder="Enter reservation duration">
+                                </div>
+
+                                <div class="form-group">
+                                    <small class="text-muted-blue bold">Reservation Request</small>
+                                    <ul class="modal-check-container">
+                                            <label class="modal-container">Crib
+                                                <input type="checkbox">
+                                                <span class="modal-checkmark"></span>
+                                                </label>                                        
+
+                                            <label class="modal-container">Cooking Utensils
+                                                <input type="checkbox">
+                                                <span class="modal-checkmark"></span>
+                                                </label>
+
+                                            <label class="modal-container">Extra Towels
+                                                <input type="checkbox">
+                                                <span class="modal-checkmark"></span>
+                                            </label>
+
+                                            <label class="modal-container">Diaper Disposal
+                                                <input type="checkbox">
+                                                <span class="modal-checkmark"></span>
+                                            </label>   
+                                        </ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <small class="text-muted-blue bold">Suggested Amount</small>
+                                    <h4><strong>KES 30,250</strong></h4>
+                                </div>                               
+                                
+                            </div>                       
+                        </div>
+                        <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-danger btn--icon-text px-5">Cancel</button>
+                        <button type="button" class="btn btn-success btn--icon-text px-5">Save</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modals -->
+			
+			 <section class="content">
+                <header class="content__title px-0 border-0">                    
+				 	<div class="row">
+						<div class="col-lg-6 col-sm-12 col-md-6">
+							<span class="rev-title-container">
+							 <h1 class="text-capitalize stream_name m-0">Check-Out</h1>
+							</span>
+							<div class="">
+								<ol class="breadcrumb border-0">
+                                    <li class="breadcrumb-item">Home</li>
+									<li class="breadcrumb-item">Rooms</li>
+									<li class="breadcrumb-item active">Check-Out</li>
+								
+								</ol>
+								
+							</div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <a></a>
+                        </div>
+
+					</div>
+                </header>
+
+                <div class="row center checkout-search">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="contact-header">
+                                    <h4>Room Search</h4>
+                                    <hr>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Room No.<strong class="text-danger">*</strong></label>
+                                    <p><small>Enter room number of the occupant checking out</small></p>
+                                    <input type="room" class="form-control validate" id="id1" required placeholder="Room Number">
+
+                                </div>
+
+                                    <button onclick="checkout_details()" class="btn float-right room-search-btn text-white btn-border mr-3"><i class="mr-2 zmdi zmdi-search"></i>Search </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row checkout_content d-none">
+
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="row bill-amount-row">
+                            <div class="col-12 p-0">
+                                <div class="card bill-amount-card">
+                                    <div class="card-body">
+                                        <div class="contact-header">
+                                            <h4>Invoice</h4>
+                                            <hr>
+                                        </div>
+                                        <h5><strong>Boarding and Room</strong></h5>
+                                        <div class="bill-amount">
+                                            <small class="text-muted-blue bold bold">3 Nights in <strong>Delux Suit: RM 401</strong></small>
+                                            <div class="d-flex justify-content-between">
+                                                <p><strong>KES 52,000</strong></p>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                        <h5><strong>Extras</strong></h5>
+                                        <div class="bill-amount">
+                                            <small class="text-muted-blue bold bold">Workout Gear</small>
+                                            <div class="d-flex justify-content-between">
+                                                <p><strong>KES 2,000</strong></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="bill-amount">
+                                            <small class="text-muted-blue bold bold">Complimentary Movie Library</small>
+                                            <div class="d-flex justify-content-between">
+                                                <p><strong>KES 2,750</strong></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="bill-amount">
+                                            <small class="text-muted-blue bold bold">Room Service for Pets</small>
+                                            <div class="d-flex justify-content-between">
+                                                <p><strong>KES 1,750</strong></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="bill-amount">
+                                            <small class="text-muted-blue bold bold">Custom-Stocked Fridge/Mini-Bar</small>
+                                            <div class="d-flex justify-content-between">
+                                                <p><strong>KES 5,750</strong></p>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 d-none"> 
+                                            <div class="receipt_details_button">
+                                                <button class="btn btn-card-transfer btn--icon-text" data-toggle="modal" data-target="#payment_tranfer_modal" >TRANSFER PAYMENT<i class="zmdi zmdi-swap mx-2"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bill-amount-total">
+                                        <h5>Total</h5>
+                                        <div class="d-flex justify-content-between">
+                                            <h5><strong>KES 64,250</strong></h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                        <div class="">
+                            <div class="col-12 p-0">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="contact-header">
+                                            <h4>Complaints</h4>
+                                            <hr>
+                                        </div>
+                                        <table class="table bill-details-table table-hover table-sm">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Complain</th>
+                                                <th scope="col">Status</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>
+                                                    <strong>Problem with bathroom drainage</strong><br>
+                                                    <span>25-11-2020 : 08:45 AM</span>
+                                                </td>
+                                                <td>   
+                                                    <span class="badge badge-pill badge-soft-success text-uppercase px-3">Solved</span>
+                                                </td>
+
+                                              </tr>
+
+                                              <tr>
+                                                <th scope="row">2</th>
+                                                <td>
+                                                    <strong>Insufficient amount of shampoo</strong><br>
+                                                    <span>25-11-2020 : 08:45 AM</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-pill badge-soft-danger text-uppercase px-3">Reported</span>
+                                                </td>
+
+                                              </tr>
+                                            </tbody>
+                                          </table>
+
+                                        <div class="col-12 d-none"> 
+                                            <div class="receipt_details_button">
+                                                <button class="btn btn-card-transfer btn--icon-text" data-toggle="modal" data-target="#payment_tranfer_modal" >TRANSFER PAYMENT<i class="zmdi zmdi-swap mx-2"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="contact-header">
+                                            <h4>Preferences</h4>
+                                            <hr>
+                                        </div>
+                                        <div class="row">
+                                            <ul class="col-sm-12 col-lg-6 col-md-6">   
+                                                <h6><strong>Billable</strong></h6>
+                                                <li class="accepted_doc"><i class="zmdi zmdi-check-all mr-2 accepted_doc_text"></i><a>Room service for pet</a></li>
+                                                <li class="accepted_doc"><i class="zmdi zmdi-check-all mr-2 accepted_doc_text"></i><a>Movie Library</a></li>
+                                                <li class="accepted_doc"><i class="zmdi zmdi-check-all mr-2 accepted_doc_text"></i><a>Workout Gear</a></li>
+                                                <li class="accepted_doc"><i class="zmdi zmdi-check-all mr-2 accepted_doc_text"></i><a>East facing room</a></li>
+                                            </ul>  
+                                            <ul class="col-sm-12 col-lg-6 col-md-6">   
+                                                <h6><strong>Unbillable</strong></h6>
+                                                <li class="rejected_doc"><i class="zmdi zmdi-close mr-2 rejected_doc_text"></i><a>Not less than 5 floors down</a></li>
+                                                <li class="pending_doc"><i class="zmdi zmdi-circle mr-2 pending_doc_text"></i><a>Get to carry hotel gowns</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-5">
+                        <button onclick="checkout_details()" class="btn btn-success btn-lg float-right text-white btn-border mr-3 btn-outline ben-prev"><i class="mr-2 zmdi zmdi-check-all"></i>Checkout </button>
+                    </div>
+                </div>
+                                    
+
+			
+                <footer class="footer hidden-xs-down">
+                    <p>A product of Nouveta</p>
+                </footer>
+            </section>
+        </main>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                    <p>Sorry for the inconvenience!</p>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="assets/vendors/jquery/jquery.min.js"></script>
+        <script src="assets/vendors/popper.js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script src="assets/vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="assets/vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <script src="assets/vendors/flot/jquery.flot.js"></script>
+        <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="assets/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="assets/vendors/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendors/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="assets/vendors/salvattore/salvattore.min.js"></script>
+        <script src="assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+		
+		 <script src="assets/vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="assets/vendors/select2/js/select2.full.min.js"></script>
+        <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="assets/vendors/trumbowyg/trumbowyg.min.js"></script>
+        <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/vendors/rateyo/jquery.rateyo.min.js"></script>
+        <script src="assets/vendors/jquery-text-counter/textcounter.min.js"></script>
+        <script src="assets/vendors/autosize/autosize.min.js"></script>
+        <script src="assets/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+
+        <!-- Charts and maps-->
+        <script src="assets/demo/js/flot-charts/curved-line.js"></script>
+        <script src="assets/demo/js/flot-charts/dynamic.js"></script>
+        <script src="assets/demo/js/flot-charts/line.js"></script>
+        <script src="assets/demo/js/flot-charts/chart-tooltips.js"></script>
+        <script src="assets/demo/js/other-charts.js"></script>
+        <script src="assets/demo/js/jqvmap.js"></script>
+		
+		<!--high chart-->
+		<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+
+		<script src="assets/vendors/highcharts/highchart.js"></script>
+		<script src="assets/vendors/highcharts/data.js"></script>
+		<script src="assets/vendors/highcharts/drilldown.js"></script>
+		<script src="assets/vendors/highcharts/exporting.js"></script>
+		<script src="assets/vendors/highcharts/export-data.js"></script>
+		<script src="assets/vendors/highcharts/accesibility.js"></script>
+		<script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+        <script src="assets/js/highcharts/bullet.js"></script>
+        
+        <!-- Vendors: Data tables -->
+        <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/dataTables.buttons.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.print.min.js"></script>
+        <script src="assets/vendors/jszip/jszip.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.html5.min.js"></script>
+		
+		<script src="assets/js/highcharts/highcharts-more.js"></script>
+		<script src="assets/js/highcharts/theme1.js"></script>
+		<!--owl corousel-->
+		<script src="assets/vendors/OwlCarousel/owl.carousel.min.js"></script>
+
+
+        <!-- App functions and actions -->
+     	<script src="assets/js/wow.js"></script>
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/main.js"></script>
+					
+        <script src="assets/js/chart-data/revenue-targets.js"></script>
+        <script src="assets/js/chart-data/revenue-streams.js"></script>
+		 <script src="assets/js/chart-data/revenue-by-bank.js"></script>
+        <script src="assets/js/chart-data/revenue-collected.js"></script>
+		<script src="assets/js/chart-data/perfomance.js"></script>
+        <script src="assets/js/chart-data/hourly-revenue-collection.js"></script>
+		
+	
+		<!--map scripts-->
+		
+		<script src="assets/js/chart-data/map-data.js"></script>
+		
+       
+		
+		
+		
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:43 GMT -->
+</html>

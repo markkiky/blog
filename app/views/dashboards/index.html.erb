@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:03 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel='icon' href='demo/img/.png' type='image/x-icon'/ >
+		<title>Reception Desk</title>
+
+		<!-- icon fonts -->
+
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_1.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_2.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_3.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_4.css">
+		<link rel="stylesheet" href="http://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.theme.default.css">
+		<link rel="stylesheet" href="assets/css/flaticon-font/flaticon.css">
+
+        <link rel="stylesheet" href="assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="assets/vendors/fullcalendar/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css">
+        <link rel="stylesheet" href="assets/vendors/dropzone/dropzone.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/trumbowyg/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css" />
+        <link rel="stylesheet" href="assets/vendors/rateyo/jquery.rateyo.min.css">
+		<link rel="stylesheet" href="assets/vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+		
+		<!-- // Add the new slick-theme.css if you want the default styling -->
+		<link rel="stylesheet" href="assets/vendors/slick/slick.css"/>
+		<link rel="stylesheet" href="assets/vendors/slick/slick-theme.css"/>	
+
+        <!-- App styles -->
+		<link rel="stylesheet" href="assets/css/app.min.css">
+		<link rel="stylesheet" href="assets/css/daterangepicker.css">
+	
+    </head>
+
+    <body data-ma-theme="green">
+        <main class="main">
+            <%= render "layouts/page_loader" %>
+
+            <%= render "layouts/page_header" %>
+            
+			<%= render "layouts/page_sidebar" %>
+			
+            <section class="content light-body">
+                <header class="content__title px-0 border-0">                    
+					<div class="row">
+					   <div class="col-lg-6 col-sm-12 col-md-6">
+						   <span class="rev-title-container">
+							<h1 class="text-capitalize stream_name m-0">Dashboard</h1>
+						   </span>
+						   <div class="">
+							   <ol class="breadcrumb border-0">
+								   <li class="breadcrumb-item">Home</li>
+								   <li class="breadcrumb-item active">Dashboard</li>
+							   
+							   </ol>
+							   
+						   </div>
+					   </div>
+				   </div>
+			   </header>
+
+				<div class="row clearfix">
+					<div class="col-12">
+						<h4>Important statistics</h4>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<a href="#" class="card light-card top-card-bg calc-34">
+							<div class="card-body row d-flex align-items-center top-card-nav-icon">
+								<div class="col-2 mx-0">
+									<span class="top-card-avatar-bg"><i class="mdi mdi-account-check-outline"></i></span>
+								</div>
+
+								<div class="d-flex col-10 align-items-center">
+									<div class="top-card-nav-text">
+										<span>Today's Available Rooms</span>
+										<h4 class="mt-1 mb-0 font-weight-medium"><%= @data["available_rooms"] %></h4>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					
+					<div class="col-lg-3 col-md-6">
+						<a href="#" class="card top-card-bg calc-34">
+							<div class="card-body row d-flex align-items-center top-card-nav-icon">
+								<div class="col-2 mx-0">
+									<span class="top-card-avatar-bg"><i class="mdi mdi-tools"></i></span>
+								</div>
+
+								<div class="d-flex col-10 align-items-center">
+									<div class="top-card-nav-text">
+										<span>Today's Occupied Rooms</span>
+										<h4 class="mt-1 mb-0 font-weight-medium"><%= @data["occupied_rooms"] %></h4>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<a href="#" class="card top-card-bg calc-34">
+							<div class="card-body row d-flex align-items-center top-card-nav-icon">
+								<div class="col-2 mx-0">
+									<span class="top-card-avatar-bg"><i class="mdi mdi-account-multiple-plus-outline"></i></span>
+								</div>
+
+								<div class="d-flex col-10 align-items-center">
+									<div class="top-card-nav-text">
+										<span>Today's Expected Arrivals</span>
+										<h4 class="mt-1 mb-0 font-weight-medium"><%= @data["arrivals"] ? @data["arrivals"] : 0 %></h4>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<a class="card top-card-bg calc-34" href="#!">
+							<div class="card-body row d-flex align-items-center top-card-nav-icon">
+								<div class="col-2 mx-0">
+									<span class="top-card-avatar-bg"><i class="mdi mdi-account-multiple-minus-outline"></i></span>
+								</div>
+
+								<div class="d-flex col-10 align-items-center">
+									<div class="top-card-nav-text">
+										<span>Today's Expected Departure</span>
+										<h4 class="mt-1 mb-0 font-weight-medium"><%= @data["departures"] ? @data["departures"] : 0 %></h4>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-12 col-lg-5">
+						<div class="row">
+							<div class="col-12">
+							   <div class="card statistics-container">
+								   <span class="control-buttons">
+										<span class="card-prev mdi mdi-arrow-left"></span>
+										<span class="card-next mdi mdi-arrow-left"></span>
+								   </span>
+								   <div class="statistics">
+
+									<div class="card bookinn-stats stat-member">
+										<div>
+											<i class="mdi mdi-washing-machine"></i>
+										</div>
+										<div class="stat-text">
+											<p>Total Laundry</p>
+											<h3>230</h3>
+										</div>                                            
+									</div>
+
+										<div class="card bookinn-stats stat-laundry">
+											<div>
+												<i class="mdi mdi-washing-machine-alert"></i>
+											</div>
+											<div class="stat-text">
+												<p>Pending Laundry</p>
+												<h3>50</h3>
+											</div>                                            
+										</div>
+
+										<div class="card bookinn-stats stat-deposit">
+											<div>
+												<i class="mdi mdi-cash"></i>
+											</div>
+											<div class="stat-text">
+												<p>Laundry Cost</p>
+												<h3>KES 12,000</h3>
+
+											</div>                                            
+										</div>
+
+										<div class="card bookinn-stats stat-deposit">
+											<div>
+												<i class="mdi mdi-account-group-outline"></i>
+											</div>
+											<div class="stat-text">
+												<p>In-House Residents</p>
+												<h3>320</h3>
+											</div>                                            
+										</div>
+
+										<div class="card bookinn-stats stat-profit">
+											<div>
+												<i class="mdi mdi-office-building-outline"></i>
+											</div>
+											<div class="stat-text">
+												<p>Room-Resident Ratio</p>
+												<h3>3:2</h3>
+											</div>                                            
+										</div>
+
+										<div class="card bookinn-stats stat-profit">
+											<div>
+												<i class="mdi mdi-account-child-outline"></i>
+											</div>
+											<div class="stat-text">
+												<p>Children</p>
+												<h3>11</h3>
+											</div>                                            
+										</div>
+
+										
+										<div class="card bookinn-stats stat-laundry">
+											<div>
+												<i class="mdi mdi-message-alert-outline"></i>
+											</div>
+											<div class="stat-text">
+												<p>Complaints</p>
+												<h3>10</h3>
+											</div>                                            
+										</div>
+
+										
+										<div class="card bookinn-stats stat-performing">
+											<div>
+												<i class="mdi mdi-account-outline"></i>
+											</div>
+											<div class="stat-text">
+												<p>Adults</p>
+												<h3>300</h3>
+											</div>                                            
+										</div>
+
+										<div class="card bookinn-stats stat-profit">
+											<div>
+												<i class="mdi mdi-wardrobe-outline"></i>
+											</div>
+											<div class="stat-text">
+												<p>Average Occupancy Ratio</p>
+												<h3>3:2</h3>
+											</div>                                            
+										</div>
+										
+									</div>
+							   </div>
+							</div>
+
+							<div class="col-12">                                    
+								<div class="card" style="height:calc(100% + 9px);">
+									<div class="card-header">
+										<h4 class="card-title">Revenue Sources</h4>
+										<h6 class="card-subtitle">Hotel revenue collections by the different sources</h6>
+									</div>
+									<div class="table-responsive h-100 font-12">
+										<table class="table h-100 hideScrollbar mb-0 table-striped table-sm font-12 sources-table">
+											<thead>
+											<tr class="font-weight-bold text-black">
+												<th scope="col">Source</th>
+												
+												<th scope="col">Counts</th>
+												<th scope="col" class="text-right">Amount (KES)</th>
+											</tr>
+											</thead>
+											<tfoot>
+												<tr style="background: #cee9d8;">
+													<th><strong>Total</strong></th>
+												
+													<th>18,416</th>
+													<th class="text-right">5,734,479</th>     
+													</tr>
+											</tfoot>
+											<tbody>
+											<tr>
+												<td scope="row">Laundry</td>
+												
+												<td>49</td>
+												<td class="text-right">7,102</td>
+											</tr>
+											<tr>
+												<td scope="row">Housing</td>
+											
+												<td>33</td>
+												<td class="text-right">108,568</td>
+											</tr>
+
+											<tr>
+												<td scope="row">Grounds</td>
+											
+												<td>42</td>
+												<td class="text-right">195,000</td>
+											</tr>
+
+
+											<tr>
+												<td scope="row">Conference</td>
+											
+												<td>64</td>
+												<td class="text-right">100,804</td>
+											</tr>
+											<tr>
+												<td scope="row">Restaurant & Bar</td>
+											
+												<td>84</td>
+												<td class="text-right">97,900</td>
+											</tr>
+										
+											</tbody>
+										</table>
+									</div>	
+							</div>
+						</div>
+					</div>
+
+					</div>
+
+					<div class="col-lg-7 col-sm-12">
+						<!-- Orders -->
+						<div class="card" style="height: calc(100% - 30px)">
+							<div class="card-header new-header">
+							<div class="row align-items-center">
+								<div class="col">
+								<!-- Title -->
+								<h4 class="card-header-title">
+									Gross Profit
+								</h4>
+								</div>
+
+								<div class="col-auto">
+								<!-- Tabs -->
+									<ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
+										<li class="nav-item">
+										<a href="#" title="Show all transactions" class="nav-link active allbookinn" data-toggle="tab">
+											All Accomodations
+										</a>
+										</li>
+										<li class="nav-item">
+										<a href="#" title="Show money received" class="nav-link bookinnBreakdown" data-toggle="tab">
+											Accomodation Breakdown
+										</a>
+										</li>									 
+									</ul>				
+								</div>
+							</div> 
+							<!-- / .row -->				
+							</div>
+							<div class="card-body h-100">                
+							<!-- Chart -->
+								<div class="chart" >
+									<div id="all-bookinns" class="highChartStyles animated fade-in-up" style="height: 470px; "></div>
+									<div id="bookinnBreakdown" class="highChartStyles animated fade-in-up d-none" style="height: 470px;"></div>
+								</div>
+							<!-- <div class="chart">
+								<canvas id="transaction-data" class="chart-canvas"></canvas>
+							</div> -->
+							</div>
+						</div>
+					</div>
+
+					
+				</div>
+
+				<div class="row d-none">
+					<div class="col-lg-5 col-sm-12">
+						<div class="row">
+							<div class="col-12">
+								<a href="members.html" class="card light-card">
+									<div class="card-body">
+										<div class="new-card">
+											<div class="">
+												<h4 class="">26</h4>
+												<div class="">Registered Members</div>
+											</div>
+											<div class="mr-4">
+												<i class="pe-7s-users"></i>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							
+							
+							<div class="col-12">
+								<a href="deposits.html" class="card light-card">
+									<div class="card-body">
+										<div class="new-card">
+											<div class="">
+												<h4 class="">KES 326,895,000</h4>
+												<div class="">Value of total Member deposits</div>
+											</div>
+											<div class="mr-4">
+												<i class="pe-7s-cash"></i>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>	
+
+						</div>
+					</div>
+
+					<div class="col-lg-7 col-md-6 col-sm-12">
+						<div class="card light-card top-card-bg calc-34">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-6 border-right pb-4 pt-4">
+										<label class="mb-0">Number of bookinns taken</label>
+										<h4 class="font-19 font-19 text-col-blue">22</h4>
+									</div>
+									<div class="col-6 pb-4 pt-4">
+										<label class="mb-0 text-right w-100">Value of bookinns taken</label>
+										<h4 class="font-19 font-19 text-col-blue text-right">KES 20,369,962</h4>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 border-top p-0">
+										<table class="table card-table mb-0">
+											<tbody>
+												<tr class="border-bottom">
+													<td class="">Value of Unpaid bookinns</td>
+													<td class="text-right  font-medium">KES 15,250,600
+													</td>
+												</tr>
+												<tr>
+													<td class="line-4" style="line-height: 2;">Default Rate</td>
+													<td class=" text-right  "><span class="text-danger badge badge-soft-danger badge-pill font-medium">74.87%</span>
+													</td>
+												</tr>												
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row clearfix d-non">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-header new-header">
+								<div class="row align-items-center">
+									<div class="col">
+									<!-- Title -->
+									<h4 class="card-header-title" style="padding-top: 15px; padding-bottom: 15px;">
+										Occupancy Summary
+									</h4>
+									</div>
+	
+								</div> 
+								<!-- / .row -->				
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-sm-12 col-md-6 col-lg-5">
+											<div id="BookingSummary" class="highChartStyles animated fade-in-up" style="height: 300px;"></div>
+
+										</div>
+										<div class="col-sm-12 col-md-6 col-lg-7">
+											<div id="active-branches" style="height: 300px"></div>
+										</div>
+									</div>
+								</div>
+								<div class="card-footer text-center d-none">
+									<div class="row clearfix text-left">
+											<div class="col-12 d-flex flex-wrap">
+												<div class="mr-3">
+											
+													<span>Value of unpaid bookinns</span>
+													<h6>KES 20,369,962</h6>
+												</div>
+												<div class="mr-3 ">
+													<span>Members with bookinns</span>.
+													<h6>1295</h6>
+												</div>
+
+												<div class="mr-3 ">
+													<span>Members without bookinns</span>.
+													<h6>129</h6>
+												</div>
+
+												<div class="mr-3 ">
+													<span>Default rate</span>.
+													<h6><span class="badge-pill badge-soft-danger">74.87%</span></h6>
+												</div>
+											</div>
+									</div>
+								</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-lg-6" style="margin-bottom: 4.4rem;">
+						
+						<!--revenue perfomance-->
+						<div class="card comparison-graph-card">
+							<div class="card-body">
+								<div id="perfomance" style="height: 100%"></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6 col-lg-6">
+						<div class="card">
+							<div class="card-body">
+								<div id="members-activity" style="height: 100%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <footer class="footer footer_logo hidden-xs-down">
+						<span class="">
+							<strong>A product of</strong>
+							<img src="assets/demo/img/logo-files/nouveta_logo.png">
+						</span>
+				 </footer>
+            </section>
+        </main>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                    <p>Sorry for the inconvenience!</p>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+		<script src="assets/vendors/jquery/jquery.min.js"></script>
+		<script src="assets/vendors/slick/slick.min.js"></script>
+        <script src="assets/vendors/popper.js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="assets/vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <script src="assets/vendors/flot/jquery.flot.js"></script>
+        <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="assets/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="assets/vendors/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendors/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="assets/vendors/salvattore/salvattore.min.js"></script>
+        <script src="assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+		<script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+        <script src="assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+		
+		 <script src="assets/vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="assets/vendors/select2/js/select2.full.min.js"></script>
+        <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="assets/vendors/trumbowyg/trumbowyg.min.js"></script>
+        <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/vendors/rateyo/jquery.rateyo.min.js"></script>
+        <script src="assets/vendors/jquery-text-counter/textcounter.min.js"></script>
+        <script src="assets/vendors/autosize/autosize.min.js"></script>
+		<script src="assets/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+		
+
+        <!-- Charts and maps-->
+        <script src="assets/demo/js/flot-charts/curved-line.js"></script>
+        <script src="assets/demo/js/flot-charts/dynamic.js"></script>
+        <script src="assets/demo/js/flot-charts/line.js"></script>
+        <script src="assets/demo/js/flot-charts/chart-tooltips.js"></script>
+        <script src="assets/demo/js/other-charts.js"></script>
+        <script src="assets/demo/js/jqvmap.js"></script>
+		
+		<!-- high charts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/highcharts.js" integrity="sha512-PpL09bLaSaj5IzGNx6hsnjiIeLm9bL7Q9BB4pkhEvQSbmI0og5Sr/s7Ns/Ax4/jDrggGLdHfa9IbsvpnmoZYFA==" crossorigin="anonymous"></script>
+		<!-- <script src="assets/libs/highcharts/highchart.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/data.min.js" integrity="sha512-z2pVXf6Q3w/tD7NnbA/u/EDW7X8VUISARx3mVRk0vGULcDRcfhA65veFZS3LWW3DM8l/MW2Oxu8PlqJa+Za4Hw==" crossorigin="anonymous"></script>    
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/drilldown.min.js" integrity="sha512-1F5YJc0seERSBvoF3csYQm+JO6qF9O+1hwUKBbOUKcRj3RnDAmKEEzuqPnCcLOtt/2h2CzsCbSy0bv0yuCfZNQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/exporting.min.js" integrity="sha512-DuFO4JhOrZK4Zz+4K0nXseP0K/daLNCrbGjSkRzK+Zibkblwqc0BYBQ1sTN7mC4Kg6vNqr8eMZwLgTcnKXF8mg==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/offline-exporting.min.js" integrity="sha512-5vKhOIyF4HBeTJQ4VvTAWGuAvGMp3BbDwD6CjzZPc0T/h4D8bqvvj+D/IYyJ1ua6s72VcuQ2fPEjBn+CHR6UWQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/export-data.min.js" integrity="sha512-JFLRyhQGrSpOOboAjCGEfEm0Z+GvPcucULDdEhRFoGtJJ439x64z/F1f6GTJM7+3PGqXqgkXNc6LO/04RGsW4w==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/accessibility.min.js" integrity="sha512-cN9FFspkIN+ZS37xvtrtP4jfDc7D1BA1ma9l2YPkV47Ac70t98RjOe9gR+2dCBUkiyamLLfFtqXH+/iL0fqhjw==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/es-modules/Series/ItemSeries.min.js" integrity="sha512-UnnyAAfaraMnJOILh+bwawPvAF4+bbOXAPcUv2OREvyYTdi8TPJ4UZ+Ip8IL3mMY+cAY/yzuzq+v/EvmoZx7iA==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/streamgraph.min.js" integrity="sha512-RjmbiCs5aaU692OGy4q5YbGnHmiGexQY54rMmsY2HbaHX6OJ5AxqAtDQ9lVGubnbz+UPanupAF3avZJKY2jNWg==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/series-label.min.js" integrity="sha512-ppfBb+ms2RL9FloNCD8c9mykruT6sI5ACsAdSgS69pDv/Dnn64LGewhmLnMVTCm3Zt5K2LXamZD4Ndr9EFUhMQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/annotations.min.js" integrity="sha512-Qq+ClgMyYirIBC34w/LXcHhviIf+DvBzPW7vi3Ekn/jHYArYe+6TCiFp74q7pkUEitJLF543JCgxVQ6ax4xBNg==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/bullet.min.js" integrity="sha512-RsB4WtWGLsMOVX4LGEqcG7TQHJBvD/wPgSYrN4zQUSvCzhubwAlxeXgFM1+ROQ7TzKfl0L6AbiBNXyRDBFKNoA==" crossorigin="anonymous"></script>
+		<script src="assets/js/highcharts/theme1.js"></script>
+
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+		<script src="assets/js/highcharts/highcharts-more.js"></script>
+		<!--owl corousel-->
+		<script src="assets/vendors/OwlCarousel/owl.carousel.min.js"></script>
+					
+		<!-- high chart data -->
+		<script src="assets/js/chart-data/all-bookinns.js"></script>
+		<script src="assets/js/chart-data/bookinnBreakdown.js"></script>
+		<script src="assets/js/chart-data/booking_summary.js"></script>
+		<script src="assets/js/chart-data/active-branches.js"></script>
+		<script src="assets/js/chart-data/perfomance.js"></script>
+		<script src="assets/js/chart-data/ongoing-loans.js"></script>
+		<script src="assets/js/chart-data/transaction-data.js"></script>
+		<script src="assets/js/chart-data/members-activity.js"></script>
+		<script src="assets/js/chart-data/column-member-activity.js"></script>
+		<script src="assets/js/chart-data/transaction-activity.js"></script>
+
+		<script src="assets/js/chart-data/thisMonthBookingPerfomance.js"></script>
+		
+	
+		<!--map scripts-->
+		
+		<script src="assets/js/chart-data/map-data.js"></script>
+		
+        <!-- App functions and actions -->
+		<script src="assets/js/wow.js"></script>
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/main.js"></script>
+		
+		
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:43 GMT -->
+</html>

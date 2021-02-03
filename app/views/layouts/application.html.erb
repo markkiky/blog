@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- icon fonts -->
+
+		<%# <link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_1.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_2.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_3.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_4.css">
+		<link rel="stylesheet" href="http://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.theme.default.css">
+		<link rel="stylesheet" href="assets/css/flaticon-font/flaticon.css">
+
+        <link rel="stylesheet" href="assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="assets/vendors/fullcalendar/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css">
+        <!-- Not needed in dashboard -->
+        <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+        <!-- end of not needed -->
+
+        <link rel="stylesheet" href="assets/vendors/dropzone/dropzone.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/trumbowyg/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css" />
+        <link rel="stylesheet" href="assets/vendors/rateyo/jquery.rateyo.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+        <!-- // Add the new slick-theme.css if you want the default styling  needed in dashboard-->
+		<link rel="stylesheet" href="assets/vendors/slick/slick.css"/>
+		<link rel="stylesheet" href="assets/vendors/slick/slick-theme.css"/>	
+
+        <!-- App styles -->
+		<link rel="stylesheet" href="assets/css/app.min.css">
+		<link rel="stylesheet" href="assets/css/daterangepicker.css"> %>
+	
+    
+  </head>
+
+  <body>
+    <%= yield %>
+    <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                    <p>Sorry for the inconvenience!</p>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+    <%# <script src="assets/vendors/jquery/jquery.min.js"></script>
+            <!-- only needed in dashboard -->
+            <script src="assets/vendors/slick/slick.min.js"></script>
+            <!--end of only needed -->
+        <script src="assets/vendors/popper.js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <!-- not needed in dashboard -->
+        <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- end of not needed -->
+        <script src="assets/vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="assets/vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <script src="assets/vendors/flot/jquery.flot.js"></script>
+        <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="assets/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="assets/vendors/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendors/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="assets/vendors/salvattore/salvattore.min.js"></script>
+        <script src="assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <!-- needed in dashboard -->
+        <script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+        <!-- end of needed -->
+        <script src="assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+		
+		 <script src="assets/vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="assets/vendors/select2/js/select2.full.min.js"></script>
+        <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="assets/vendors/trumbowyg/trumbowyg.min.js"></script>
+        <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/vendors/rateyo/jquery.rateyo.min.js"></script>
+        <script src="assets/vendors/jquery-text-counter/textcounter.min.js"></script>
+        <script src="assets/vendors/autosize/autosize.min.js"></script>
+        <script src="assets/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+
+        <!-- Charts and maps-->
+        <script src="assets/demo/js/flot-charts/curved-line.js"></script>
+        <script src="assets/demo/js/flot-charts/dynamic.js"></script>
+        <script src="assets/demo/js/flot-charts/line.js"></script>
+        <script src="assets/demo/js/flot-charts/chart-tooltips.js"></script>
+        <script src="assets/demo/js/other-charts.js"></script>
+        <script src="assets/demo/js/jqvmap.js"></script>
+		
+		<!--high chart-->
+		<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+        <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+        <!-- end of other highcharts -->
+        
+        <!-- Vendors: Data tables -->
+        <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/dataTables.buttons.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.print.min.js"></script>
+        <script src="assets/vendors/jszip/jszip.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.html5.min.js"></script>
+        <!-- end of datatables -->
+
+        <!-- high charts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/highcharts.js" integrity="sha512-PpL09bLaSaj5IzGNx6hsnjiIeLm9bL7Q9BB4pkhEvQSbmI0og5Sr/s7Ns/Ax4/jDrggGLdHfa9IbsvpnmoZYFA==" crossorigin="anonymous"></script>
+		<!-- <script src="assets/libs/highcharts/highchart.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/data.min.js" integrity="sha512-z2pVXf6Q3w/tD7NnbA/u/EDW7X8VUISARx3mVRk0vGULcDRcfhA65veFZS3LWW3DM8l/MW2Oxu8PlqJa+Za4Hw==" crossorigin="anonymous"></script>    
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/drilldown.min.js" integrity="sha512-1F5YJc0seERSBvoF3csYQm+JO6qF9O+1hwUKBbOUKcRj3RnDAmKEEzuqPnCcLOtt/2h2CzsCbSy0bv0yuCfZNQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/exporting.min.js" integrity="sha512-DuFO4JhOrZK4Zz+4K0nXseP0K/daLNCrbGjSkRzK+Zibkblwqc0BYBQ1sTN7mC4Kg6vNqr8eMZwLgTcnKXF8mg==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/offline-exporting.min.js" integrity="sha512-5vKhOIyF4HBeTJQ4VvTAWGuAvGMp3BbDwD6CjzZPc0T/h4D8bqvvj+D/IYyJ1ua6s72VcuQ2fPEjBn+CHR6UWQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/export-data.min.js" integrity="sha512-JFLRyhQGrSpOOboAjCGEfEm0Z+GvPcucULDdEhRFoGtJJ439x64z/F1f6GTJM7+3PGqXqgkXNc6LO/04RGsW4w==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/accessibility.min.js" integrity="sha512-cN9FFspkIN+ZS37xvtrtP4jfDc7D1BA1ma9l2YPkV47Ac70t98RjOe9gR+2dCBUkiyamLLfFtqXH+/iL0fqhjw==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/es-modules/Series/ItemSeries.min.js" integrity="sha512-UnnyAAfaraMnJOILh+bwawPvAF4+bbOXAPcUv2OREvyYTdi8TPJ4UZ+Ip8IL3mMY+cAY/yzuzq+v/EvmoZx7iA==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/streamgraph.min.js" integrity="sha512-RjmbiCs5aaU692OGy4q5YbGnHmiGexQY54rMmsY2HbaHX6OJ5AxqAtDQ9lVGubnbz+UPanupAF3avZJKY2jNWg==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/series-label.min.js" integrity="sha512-ppfBb+ms2RL9FloNCD8c9mykruT6sI5ACsAdSgS69pDv/Dnn64LGewhmLnMVTCm3Zt5K2LXamZD4Ndr9EFUhMQ==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/annotations.min.js" integrity="sha512-Qq+ClgMyYirIBC34w/LXcHhviIf+DvBzPW7vi3Ekn/jHYArYe+6TCiFp74q7pkUEitJLF543JCgxVQ6ax4xBNg==" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.2.2/modules/bullet.min.js" integrity="sha512-RsB4WtWGLsMOVX4LGEqcG7TQHJBvD/wPgSYrN4zQUSvCzhubwAlxeXgFM1+ROQ7TzKfl0L6AbiBNXyRDBFKNoA==" crossorigin="anonymous"></script>
+		<%# <script src="js/highcharts/theme1.js"></script> %>
+
+		<%# <script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+        <!-- high chart data -->
+		<script src="assets/js/chart-data/all-bookinns.js"></script>
+		<script src="assets/js/chart-data/bookinnBreakdown.js"></script>
+		<script src="assets/js/chart-data/booking_summary.js"></script>
+		<script src="assets/js/chart-data/active-branches.js"></script>
+		<script src="assets/js/chart-data/perfomance.js"></script>
+		<script src="assets/js/chart-data/ongoing-loans.js"></script>
+		<script src="assets/js/chart-data/transaction-data.js"></script>
+		<script src="assets/js/chart-data/members-activity.js"></script>
+		<script src="assets/js/chart-data/column-member-activity.js"></script>
+		<script src="assets/js/chart-data/transaction-activity.js"></script>
+
+		<script src="assets/js/chart-data/thisMonthBookingPerfomance.js"></script>
+        <!-- end of highcgarts for dashboard -->
+
+		<script src="assets/vendors/highcharts/highchart.js"></script>
+		<script src="assets/vendors/highcharts/data.js"></script>
+		<script src="assets/vendors/highcharts/drilldown.js"></script>
+		<script src="assets/vendors/highcharts/exporting.js"></script>
+		<script src="assets/vendors/highcharts/export-data.js"></script>
+		<script src="assets/vendors/highcharts/accesibility.js"></script>
+		<script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+		<script src="assets/js/highcharts/bullet.js"></script>
+		
+		<script src="assets/js/highcharts/highcharts-more.js"></script>
+		<script src="assets/js/highcharts/theme1.js"></script>
+		<!--owl corousel-->
+		<script src="assets/vendors/OwlCarousel/owl.carousel.min.js"></script>
+
+
+        <!-- App functions and actions -->
+     	<script src="assets/js/wow.js"></script>
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/main.js"></script>
+					
+        <script src="assets/js/chart-data/revenue-targets.js"></script>
+        <script src="assets/js/chart-data/revenue-streams.js"></script>
+		 <script src="assets/js/chart-data/revenue-by-bank.js"></script>
+        <script src="assets/js/chart-data/revenue-collected.js"></script>
+		<script src="assets/js/chart-data/perfomance.js"></script>
+        <script src="assets/js/chart-data/hourly-revenue-collection.js"></script>
+		
+	
+		<!--map scripts-->
+		
+		<script src="assets/js/chart-data/map-data.js"></script>  %>
+  </body>
+</html>
