@@ -1,9 +1,42 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
   skip_before_action :verify_authenticity_token
-
+  before_action :authorize_user
+  # console
   # GET /rooms or /rooms.json
   def index
+    console
+    @current_user = current_user
+    begin
+      # get all rooms
+      url = URI("https://bookinn.ngrok.io/rooms")
+
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true
+
+      request = Net::HTTP::Get.new(url)
+      request["Authorization"] = "Bearer #{session["access_token"]}"
+
+      response = http.request(request)
+      puts response.read_body
+      @response_rooms = JSON.parse(response.read_body)
+    rescue => exception
+      @rooms = {}
+    else
+      if @response_rooms["status"] == 200
+        @rooms = @response_rooms["data"]
+      elsif @response_rooms["status"] == 401
+      elsif @response_rooms["status"] == 401
+      end
+    end
+  end
+
+  # GET /rooms/1 or /rooms/1.json
+  def show
+  end
+
+  # GET /rooms/new
+  def new
     # console
     begin
       # get all rooms
@@ -71,17 +104,6 @@ class RoomsController < ApplicationController
         @room_types = []
       end
     end
-
-    # @rooms = Room.all
-  end
-
-  # GET /rooms/1 or /rooms/1.json
-  def show
-  end
-
-  # GET /rooms/new
-  def new
-    @room = Room.new
   end
 
   # GET /rooms/1/edit

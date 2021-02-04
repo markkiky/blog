@@ -4,13 +4,13 @@ class ApplicationController < ActionController::Base
   require "json"
   include ApplicationHelper
 
-  helper_method :current_user
+  def authorize_user
+    @current_user = session["user_id"]
+  end
 
-  private
-  # @current_user = current_user
   def current_user
-    # @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    @current_user = session['user_id']
- end
- 
+    return @current_user
+  end
+
+  # helper_method :current_user
 end
