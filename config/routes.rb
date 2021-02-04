@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "login", to: "authentications#login", as: :login
   post "auth/login", to: "authentications#server_login"
+  get "logout", to: "authentications#logout", as: :logout
+
   get "available_rooms", to: "rooms#available_rooms", as: :available_rooms
   get "checkin", to: "rooms#check_in", as: :check_in
   get "checkout", to: "rooms#check_out", as: :check_out

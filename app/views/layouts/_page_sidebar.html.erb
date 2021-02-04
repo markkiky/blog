@@ -158,7 +158,11 @@
                     <li><a href="restaurant/setup/vehicle.html"><i class="mdi mdi-car-outline"></i>Vehicles</a></li>
                 </ul>
             </li>
-                <li class="navigation__active mt-4"><a href="landing-page.html"><i class="zmdi zmdi-power"></i>Logout</a></li>
+                <li class="navigation__active mt-4">
+                 <%= link_to logout_path do  %>
+                    <i class="zmdi zmdi-power"></i> Logout
+                <% end %>
+                </li>
         </ul>
     </div>
 </aside>
