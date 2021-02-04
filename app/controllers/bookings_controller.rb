@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show edit update destroy ]
   skip_before_action :verify_authenticity_token
+  before_action :current_user
 
   # GET /bookings or /bookings.json
   def index

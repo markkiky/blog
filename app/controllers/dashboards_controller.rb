@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+  before_action :current_user
   # before_action :current_user!
   # console
   def index

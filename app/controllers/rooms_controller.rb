@@ -1,11 +1,10 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
   skip_before_action :verify_authenticity_token
-  before_action :authorize_user
-  # console
+  before_action :current_user
+
   # GET /rooms or /rooms.json
   def index
-    console
     @current_user = current_user
     begin
       # get all rooms
