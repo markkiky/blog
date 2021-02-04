@@ -95,22 +95,41 @@
                 <li class="navigation__sub">
                 <a href="#"><i class="flaticon-document-1"></i>Reports<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
                 <ul>
-                    <li class="navigation__sub">
-                        <a href="restaurant/reports/bills.html"><i class="mdi mdi-file-document-multiple"></i>Bills<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
-                        <ul class="px-2">
-                            <li><a href="restaurant/reports/bills.html">Raised Bills</a></li>
-                            <li><a href="restaurant/reports/unpaid_bills.html">Unpaid Bills</a></li>
-                            <li><a href="restaurant/reports/partly_bills.html">Partly Bills</a></li>
-                            <li><a href="restaurant/reports/paid_bills.html">Paid Bills</a></li>
-                        </ul>
+                    <li>
+                        <%= link_to  bills_reports_path do %>
+                            <i class="mdi mdi-file-document-multiple"></i>Bills
+                        <% end %>
                     </li>
-                    <li><a href="restaurant/reports/checkin.html"><i class="mdi mdi-account-multiple-plus-outline"></i>Check In</a></li>
-                    <li><a href="restaurant/reports/checkout.html"><i class="mdi mdi-account-multiple-minus-outline"></i>Check Out</a></li>
-                    <li><a href="restaurant/reports/transfer.html"><i class="mdi mdi-account-convert-outline"></i>Transfers</a></li>
-                    <li><a href="restaurant/reports/complaints.html"><i class="mdi mdi-message-alert-outline"></i>Complaints</a></li>
-                    <li><a href="restaurant/reports/accomodation.html"><i class="mdi mdi-room-service"></i>Accomodation</a></li>
-                    <li><a href="restaurant/reports/resources.html"><i class="mdi mdi-checkbox-multiple-blank-circle-outline"></i>Resources</a></li>
-                    
+                    <li> 
+                        <%= link_to  checkin_reports_path do %>
+                            <i class="mdi mdi-account-multiple-plus-outline"></i>Check In
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to  checkout_reports_path do %>
+                            <i class="mdi mdi-account-multiple-minus-outline"></i>Check Out
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to  transfers_reports_path do %>
+                            <i class="mdi mdi-account-convert-outline"></i>Transfers
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to  complaints_reports_path do %>
+                            <i class="mdi mdi-message-alert-outline"></i>Complaints
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to accomodation_reports_path do %>
+                            <i class="mdi mdi-room-service"></i>Accomodation
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to  resources_reports_path do %>
+                            <i class="mdi mdi-checkbox-multiple-blank-circle-outline"></i>Resources
+                        <% end %>
+                    </li>                    
                 </ul>
             </li>
             

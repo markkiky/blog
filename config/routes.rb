@@ -24,6 +24,15 @@ Rails.application.routes.draw do
 
   get "profile", to: "authentications#profile", as: :profile
 
+  # reports routes 
+  get "bills_reports", to: "reports#bills_reports", as: :bills_reports
+  get "checkin_reports", to: "reports#checkin_reports", as: :checkin_reports
+  get "checkout_reports", to: "reports#checkout_reports", as: :checkout_reports
+  get "transfers_reports", to: "reports#transfers_reports", as: :transfers_reports
+  get "complaints_reports", to: "reports#complaints_reports", as: :complaints_reports
+  get "accomodation_reports", to: "reports#accomodation_reports", as: :accomodation_reports
+  get "resources_reports", to: "reports#resources_reports", as: :resources_reports
+
   # get "booking", to: "bookings#bookings"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

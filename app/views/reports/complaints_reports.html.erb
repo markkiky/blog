@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:03 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel='icon' href='demo/img/.png' type='image/x-icon'/ >
+		<title>Reception Desk</title>
+
+		<!-- icon fonts -->
+
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_1.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_2.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_3.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_4.css">
+		<link rel="stylesheet" href="http://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.theme.default.css">
+		<link rel="stylesheet" href="assets/css/flaticon-font/flaticon.css">
+
+        <link rel="stylesheet" href="assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="assets/vendors/fullcalendar/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="assets/vendors/dropzone/dropzone.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/trumbowyg/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css" />
+        <link rel="stylesheet" href="assets/vendors/rateyo/jquery.rateyo.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+        <!-- App styles -->
+		<link rel="stylesheet" href="assets/css/app.min.css">
+		<link rel="stylesheet" href="assets/css/daterangepicker.css">
+	
+    </head>
+
+    <body data-ma-theme="green">
+        <main class="main">
+            
+            <%= render "layouts/page_loader" %>
+
+            <%= render "layouts/page_header" %>
+            
+			<%= render "layouts/page_sidebar" %>
+
+        <!-- details -->
+        <div class="modal fade" id="laundry-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Laundry For Room 104</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="with-mpesa animated fade-in">
+                            <div class="row" >
+
+                                <div class="col-sm-12">
+                                    <p class=""><small>Room</small></p>
+                                    <strong>Delux (RM-104)</strong>
+                                    <hr>
+
+                                    <p class=""><small>Date Requested</small></p>
+                                    <strong>22nd May 2020 12:56 PM</strong>
+                                    <hr>
+
+                                    <p class=""><small>Laundry Description</small></p>
+                                    <strong>Mud stained blue trench coat</strong>
+                                    <hr>
+
+                                    <p class=""><small>Requested By</small></p>
+                                    <strong>Mr Sherehe</strong>
+                                    <hr>
+
+                                    
+                                    <p class=""><small>Assigned to</small></p>
+                                    <strong>Mr James Msafi</strong>
+                                    <hr>
+
+                                    <p class=""><small>Occupant Contact</small></p>
+                                    <strong><p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p></strong>
+                                    <strong><p><a href="tel:+254 712 345 678">+254 712 345 678</a></p></strong>
+                                            
+                                </div>                              
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+                <!-- Delete Booking -->
+                <div class="modal fade" id="deactivate-room" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Delete Room 104 Booking</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="">
+                                    <h5>Are you sure you want to delete this booking?</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Reason<strong class="text-danger">*</strong></label>
+                                            <textarea class="form-control validate"  minlength="2" placeholder="Enter reason to delete room booking" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Yes, Delete Booking</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Edit Booking -->
+                <div class="modal fade" id="edit-room-booking" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edit Booking Details for RM-104</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Make changes to initially submitted Details</p>
+                                <form class="with-mpesa animated fade-in">
+                                    <div class="row" >
+        
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>
+                                                    <strong>Select Room Type</strong>  <strong class="text-danger">*</strong>
+                                                    <p class="d-none"><small>Select room type from options below</small></p>
+                                                </label>
+                                                <select class="selectpicker form-control show-tick" title="Room Type" data-live-search="true">
+                                                    <option data-tokens="select">-- Select Room Type --</option>
+                                                    <option data-tokens="option 1">Delux</option>
+                                                    <option data-tokens="option 2">Presidential Suite</option>
+                                                    <option data-tokens="option 3">Cabana</option>
+                                                    <option data-tokens="option 4">Adjoining</option>
+                                                    
+                                                  </select>
+                                                  
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label><strong>Dates</strong> <strong class="text-danger">*</strong></label>
+                                                <div class="actions d-flex">
+                                                    <div id="reportrange"
+                                                        style="cursor: pointer; padding: 10px 10px; border: 1px solid #ccc; width: 100%">
+                                                        <i class="ti-calendar"></i>&nbsp;
+                                                        <span></span> <i class="fa fa-caret-down"></i>
+                                                    </div>  
+                                                    <button class="btn btn-success d-none text-nowrap " id="date-reset" onclick="reset_date()">Reset Date</button>
+                                                </div>
+                                            </div>
+                
+                                        </div>  
+                                        
+                                        <div class="col-sm-12">
+                                            <div class="form-group"> 
+                                                <label>
+                                                    <strong>Room Preferences</strong>  <strong class="text-danger">*</strong>
+                                                </label>                                                            
+                                                <textarea class="form-control  text-counter  pl-3 pt-3" placeholder="Start typing..." value= "In room TV" required style="height: 134px;"></textarea>
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group"> 
+                                                <label>
+                                                    <strong>Number of Occupants</strong>  <strong class="text-danger">*</strong>
+                                                    <p class="d-none"><small>Enter number of occupants</small></p>
+                                                </label>                                                            
+                                                <input type="text" class="form-control" placeholder="Enter number of occupants" value="2" required>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group"> 
+                                                <label>
+                                                    <strong>Occupant Name</strong>  <strong class="text-danger">*</strong>
+                                                    <p class="d-none"><small>Enter number of occupants</small></p>
+                                                </label>                                                            
+                                                <input type="text" class="form-control" placeholder="Enter number of occupants" value="Mr Sherehe" required>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group"> 
+                                                <label>
+                                                    <strong>Occupant Contact</strong>  <strong class="text-danger">*</strong>
+                                                    <p class="d-none"><small>Enter number of occupants</small></p>
+                                                </label>                                                            
+                                                <input type="text" class="form-control" placeholder="Enter occupant's contact" value="+254 712 345 678" required>
+                                            </div>
+                                        </div>
+                                       
+                                       
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Dismiss</button>
+                            <button type="button" class="btn btn-success btn--icon-text"> <i class="zmdi zmdi-check" ></i>Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Details Booking -->
+                <div class="modal fade" id="room-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Booking Details for RM-104</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="with-mpesa animated fade-in">
+                                    <div class="row" >
+        
+                                        <div class="col-sm-12">
+                                            <p class=""><small>Room Type</small></p>
+                                            <strong>Delux</strong>
+                                            <hr>
+        
+                                            <p class=""><small>Dates</small></p>
+                                            <strong>22nd May 2020 - 25th Jul 2020</strong>
+                                            <hr>
+        
+                                            <p class=""><small>Room Preferences</small></p>
+                                            <ul style="padding-left: 12px;">
+                                                <li><strong>North Facing Window</strong></li>
+                                                <li><strong>Movie Package</strong></li>
+                                                <li><strong>Working Desk</strong></li>
+                                            </ul>
+                                            <hr>
+        
+                                            <p class=""><small>Number of Occupants</small></p>
+                                            <strong>2 Adults</strong>
+                                            <hr>
+        
+                                            
+                                            <p class=""><small>Occupant</small></p>
+                                            <strong>Mr Sherehe</strong>
+                                            <hr>
+        
+                                            <p class=""><small>Occupant Contact</small></p>
+                                            <strong><p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p></strong>
+                                            <strong><p><a href="tel:+254 712 345 678">+254 712 345 678</a></p></strong>
+                                                    
+                                        </div>                              
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Dismiss</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <!-- Make Complaint -->
+                <div class="modal fade" id="make-complaint" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Make Complaint</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Make changes to initially submitted Details</p>
+                                <form class="with-mpesa animated fade-in">
+                                    <div class="row" >
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group"> 
+                                                <label>
+                                                    <strong>Room No.</strong>  <strong class="text-danger">*</strong>
+                                                </label>      
+                                                <input type="text" class="form-control" placeholder="Enter room number" required>                                                      
+                                            </div>
+                                        </div>
+
+        
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>
+                                                    <strong>Select Room Type</strong>  <strong class="text-danger">*</strong>
+                                                    <p class="d-none"><small>Select room type from options below</small></p>
+                                                </label>
+                                                <select class="selectpicker form-control show-tick" title="Room Type" data-live-search="true">
+                                                    <option data-tokens="select">-- Select Room Type --</option>
+                                                    <option data-tokens="option 1">Delux</option>
+                                                    <option data-tokens="option 2">Presidential Suite</option>
+                                                    <option data-tokens="option 3">Cabana</option>
+                                                    <option data-tokens="option 4">Adjoining</option>
+                                                    
+                                                    </select>
+                                                    
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label><strong>Dates</strong> <strong class="text-danger">*</strong></label>
+                                                <div class="actions d-flex">
+                                                    <div id="reportrange"
+                                                        style="cursor: pointer; padding: 10px 10px; border: 1px solid #ccc; width: 100%">
+                                                        <i class="ti-calendar"></i>&nbsp;
+                                                        <span></span> <i class="fa fa-caret-down"></i>
+                                                    </div>  
+                                                    <button class="btn btn-success d-none text-nowrap " id="date-reset" onclick="reset_date()">Reset Date</button>
+                                                </div>
+                                            </div>
+                
+                                        </div>  
+                                        
+                                        <div class="col-sm-12">
+                                            <div class="form-group"> 
+                                                <label>
+                                                    <strong>Complaint</strong>  <strong class="text-danger">*</strong>
+                                                </label>                                                            
+                                                <textarea class="form-control  text-counter  pl-3 pt-3" placeholder="Start typing..." required style="height: 134px;"></textarea>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Dismiss</button>
+                            <button type="button" class="btn btn-success btn--icon-text"> <i class="zmdi zmdi-check" ></i>Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+        <!-- Modal -->
+            
+            
+			 <section class="content">
+                <header class="content__title px-0 border-0">                    
+				 	<div class="row">
+						<div class="col-lg-6 col-sm-12 col-md-6">
+							<span class="rev-title-container">
+							 <h1 class="text-capitalize stream_name m-0">Complaints</h1>
+							</span>
+							<div class="">
+								<ol class="breadcrumb border-0">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item">Report</li>
+									<li class="breadcrumb-item active">Complaints</li>
+								
+								</ol>
+								
+							</div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12 col-md-6 m-auto">
+                            <button data-toggle="modal" data-target="#make-complaint" class="btn btn-danger btn-sm btn--icon-text ml-2 float-right"><i class="zmdi zmdi-edit"></i>Enter Complaint</button>													
+                        </div>
+					</div>
+                </header>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                    <table class="table table-hover spacing8" id="data-table">
+                                        <thead>
+                                          <tr>
+                                            <th>#</th>
+                                            <th>Room No.</th>
+                                            <th>Complain</th>
+                                            <th>Occupant</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td class="w60">
+
+                                                <a title="" href="user-profile.html"><div class="">RM-104</div></a>
+                                            </td>
+                                            <td>
+                                                <strong>Problem with bathroom drainage</strong><br>
+                                                <span>25-11-2020 : 08:45 AM</span>
+                                            </td>
+                                            <td>
+                                                <h5>Mr Sherehe</h5>
+                                                <p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p>
+                                                <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+                                            </td>
+                                            <td>   
+                                                <span class="badge badge-pill badge-soft-success text-uppercase px-3">Solved</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+                                                <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+                                                <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+                                            </td>
+
+                                          </tr>
+
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td class="w60">
+
+                                                <a title="" href="user-profile.html"><div class="">RM-104</div></a>
+                                            </td>
+                                            <td>
+                                                <strong>Insufficient amount of shampoo</strong><br>
+                                                <span>25-11-2020 : 08:45 AM</span>
+                                            </td>
+                                            <td>
+                                                <h5>Mr Sherehe</h5>
+                                                <p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p>
+                                                <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-pill badge-soft-danger text-uppercase px-3">Reported</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+                                                <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+                                                <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+                                            </td>
+
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td class="w60">
+
+                                                <a title="" href="user-profile.html"><div class="">RM-104</div></a>
+                                            </td>
+                                            <td>
+                                                <strong>Problem with bathroom drainage</strong><br>
+                                                <span>25-11-2020 : 08:45 AM</span>
+                                            </td>
+                                            <td>
+                                                <h5>Mr Sherehe</h5>
+                                                <p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p>
+                                                <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+                                            </td>
+                                            <td>   
+                                                <span class="badge badge-pill badge-soft-success text-uppercase px-3">Solved</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+                                                <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+                                                <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+                                            </td>
+
+                                          </tr>
+
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td class="w60">
+
+                                                <a title="" href="user-profile.html"><div class="">RM-104</div></a>
+                                            </td>
+                                            <td>
+                                                <strong>Insufficient amount of shampoo</strong><br>
+                                                <span>25-11-2020 : 08:45 AM</span>
+                                            </td>
+                                            <td>
+                                                <h5>Mr Sherehe</h5>
+                                                <p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p>
+                                                <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-pill badge-soft-danger text-uppercase px-3">Reported</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+                                                <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+                                                <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+                                            </td>
+
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td class="w60">
+
+                                                <a title="" href="user-profile.html"><div class="">RM-104</div></a>
+                                            </td>
+                                            <td>
+                                                <strong>Problem with bathroom drainage</strong><br>
+                                                <span>25-11-2020 : 08:45 AM</span>
+                                            </td>
+                                            <td>
+                                                <h5>Mr Sherehe</h5>
+                                                <p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p>
+                                                <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+                                            </td>
+                                            <td>   
+                                                <span class="badge badge-pill badge-soft-success text-uppercase px-3">Solved</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+                                                <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+                                                <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+                                            </td>
+
+                                          </tr>
+
+                                          <tr>
+                                            <th scope="row">2</th>
+                                            <td class="w60">
+
+                                                <a title="" href="user-profile.html"><div class="">RM-104</div></a>
+                                            </td>
+                                            <td>
+                                                <strong>Insufficient amount of shampoo</strong><br>
+                                                <span>25-11-2020 : 08:45 AM</span>
+                                            </td>
+                                            <td>
+                                                <h5>Mr Sherehe</h5>
+                                                <p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p>
+                                                <p><a href="tel:+254700123456">+254 700 123 456</a></p>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-pill badge-soft-danger text-uppercase px-3">Reported</span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+                                                <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+                                                <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+                                            </td>
+
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+			
+                <footer class="footer hidden-xs-down">
+                    <p>A product of Nouveta</p>
+                </footer>
+            </section>
+        </main>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                    <p>Sorry for the inconvenience!</p>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="assets/vendors/jquery/jquery.min.js"></script>
+        <script src="assets/vendors/popper.js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script src="assets/vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="assets/vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <script src="assets/vendors/flot/jquery.flot.js"></script>
+        <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="assets/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="assets/vendors/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendors/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="assets/vendors/salvattore/salvattore.min.js"></script>
+        <script src="assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+		
+		<script src="assets/vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="assets/vendors/select2/js/select2.full.min.js"></script>
+        <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="assets/vendors/trumbowyg/trumbowyg.min.js"></script>
+        <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/vendors/rateyo/jquery.rateyo.min.js"></script>
+        <script src="assets/vendors/jquery-text-counter/textcounter.min.js"></script>
+        <script src="assets/vendors/autosize/autosize.min.js"></script>
+        <script src="assets/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+
+        <!-- Charts and maps-->
+        <script src="assets/demo/js/flot-charts/curved-line.js"></script>
+        <script src="assets/demo/js/flot-charts/dynamic.js"></script>
+        <script src="assets/demo/js/flot-charts/line.js"></script>
+        <script src="assets/demo/js/flot-charts/chart-tooltips.js"></script>
+        <script src="assets/demo/js/other-charts.js"></script>
+        <script src="assets/demo/js/jqvmap.js"></script>
+
+        <!-- Vendors: Data tables -->
+        <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/dataTables.buttons.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.print.min.js"></script>
+        <script src="assets/vendors/jszip/jszip.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.html5.min.js"></script>
+
+		
+		<!--high chart-->
+		<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+
+		<script src="assets/vendors/highcharts/highchart.js"></script>
+		<script src="assets/vendors/highcharts/data.js"></script>
+		<script src="assets/vendors/highcharts/drilldown.js"></script>
+		<script src="assets/vendors/highcharts/exporting.js"></script>
+		<script src="assets/vendors/highcharts/export-data.js"></script>
+		<script src="assets/vendors/highcharts/accesibility.js"></script>
+		<script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+		<script src="assets/js/highcharts/bullet.js"></script>
+		
+		<script src="assets/js/highcharts/highcharts-more.js"></script>
+		<script src="assets/js/highcharts/theme1.js"></script>
+		<!--owl corousel-->
+		<script src="assets/vendors/OwlCarousel/owl.carousel.min.js"></script>
+
+
+        <!-- App functions and actions -->
+     	<script src="assets/js/wow.js"></script>
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/main.js"></script>
+					
+        <script src="assets/js/chart-data/revenue-targets.js"></script>
+        <script src="assets/js/chart-data/revenue-streams.js"></script>
+		<script src="assets/js/chart-data/revenue-by-bank.js"></script>
+        <script src="assets/js/chart-data/revenue-collected.js"></script>
+		<script src="assets/js/chart-data/perfomance.js"></script>
+        <script src="assets/js/chart-data/hourly-revenue-collection.js"></script>
+		
+	
+		<!--map scripts-->
+		
+		<script src="assets/js/chart-data/map-data.js"></script>
+		
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:43 GMT -->
+</html>

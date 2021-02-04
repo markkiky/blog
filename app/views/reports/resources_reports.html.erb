@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:03 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel='icon' href='demo/img/.png' type='image/x-icon'/ >
+		<title>Reception Desk</title>
+
+		<!-- icon fonts -->
+
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_1.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_2.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_3.css">
+		<link rel="stylesheet" href="assets/css/icon_fonts/css/icon_set_4.css">
+		<link rel="stylesheet" href="http://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/vendors/OwlCarousel/assets/owl.theme.default.css">
+		<link rel="stylesheet" href="assets/css/flaticon-font/flaticon.css">
+
+        <link rel="stylesheet" href="assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="assets/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="assets/vendors/fullcalendar/fullcalendar.min.css">
+        <link rel="stylesheet" href="assets/vendors/select2/css/select2.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="assets/vendors/dropzone/dropzone.css">
+        <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css">
+        <link rel="stylesheet" href="assets/vendors/trumbowyg/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css" />
+        <link rel="stylesheet" href="assets/vendors/rateyo/jquery.rateyo.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+        <!-- App styles -->
+		<link rel="stylesheet" href="assets/css/app.min.css">
+		<link rel="stylesheet" href="assets/css/daterangepicker.css">
+	
+    </head>
+
+    <body data-ma-theme="green">
+        <main class="main">
+
+            <%= render "layouts/page_loader" %>
+
+            <%= render "layouts/page_header" %>
+            
+			<%= render "layouts/page_sidebar" %>
+
+        <!-- details -->
+        <div class="modal fade" id="laundry-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Laundry For Room 104</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="with-mpesa animated fade-in">
+                            <div class="row" >
+
+                                <div class="col-sm-12">
+                                    <p class=""><small>Room</small></p>
+                                    <strong>Delux (RM-104)</strong>
+                                    <hr>
+
+                                    <p class=""><small>Date Requested</small></p>
+                                    <strong>22nd May 2020 12:56 PM</strong>
+                                    <hr>
+
+                                    <p class=""><small>Laundry Description</small></p>
+                                    <strong>Mud stained blue trench coat</strong>
+                                    <hr>
+
+                                    <p class=""><small>Requested By</small></p>
+                                    <strong>Mr Sherehe</strong>
+                                    <hr>
+
+                                    
+                                    <p class=""><small>Assigned to</small></p>
+                                    <strong>Mr James Msafi</strong>
+                                    <hr>
+
+                                    <p class=""><small>Occupant Contact</small></p>
+                                    <strong><p><a href="mailto:sherehe@email.com">sherehe@email.com</a></p></strong>
+                                    <strong><p><a href="tel:+254 712 345 678">+254 712 345 678</a></p></strong>
+                                            
+                                </div>                              
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="laundry-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Amenity TV-104</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="with-mpesa animated fade-in">
+                            <div class="row" >
+
+                                <div class="col-sm-12">
+                                    <p class=""><small>Amenity</small></p>
+                                    <strong>Television(TV-104)</strong>
+                                    <hr>
+
+                                    <p class=""><small>Date Created</small></p>
+                                    <strong>22nd May 2018 12:56 PM</strong>
+                                    <hr>
+
+                                    <p class=""><small>Amenity Description</small></p>
+                                    <strong>55 inch OLED Samsung Smart TV</strong>
+                                    <hr>
+
+                                    <p class=""><small>Last Used</small></p>
+                                    <strong>22 May 2020 12:56</strong>
+                                    <strong>RM-104</strong>
+                                    <hr>
+
+                                    
+                                    <p class=""><small>Created By</small></p>
+                                    <strong>Mr Mafuko</strong>
+ 
+                                </div>                              
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    
+        <!-- Modal -->
+            
+            
+			 <section class="content">
+                <header class="content__title px-0 border-0">                    
+				 	<div class="row">
+						<div class="col-lg-6 col-sm-12 col-md-6">
+							<span class="rev-title-container">
+							 <h1 class="text-capitalize stream_name m-0">Resources/Amenities</h1>
+							</span>
+							<div class="">
+								<ol class="breadcrumb border-0">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item">Report</li>
+									<li class="breadcrumb-item active">Resources</li>
+								
+								</ol>
+								
+							</div>
+                        </div>
+					</div>
+                </header>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+
+                                    <table class="table table-hover table-striped spacing8" id="data-table">
+                                        <thead>
+                                            <tr> 
+                                                <th>Amenity No.</th>
+                                                <th>Amenity Category</th>
+                                                <th>Date Created</th>
+                                                <th>Last Used</th>
+                                                <th>Amenity Description</th>
+                                                <th>Created by</th>
+                                                <th>Actions</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>TV-104</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">TELEVISION</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>55 inch OLED Samsung Smart TV</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>DSK-102</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">DESK</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>3ft office desk and chair</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>FDG-50100</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">FRIDGE</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>Von HDR-081W mini fridge</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>TV-21</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">Television</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>45inch LG chrome cast tv</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>SPKR-28</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">SPEAKER</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>Sayonna Apps with 4 mini speakers</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>TV-104</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">TELEVISION</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>55 inch OLED Samsung Smart TV</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>PJCT-102</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">PROJECTOR</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>Parasonic PT-DZ16K2 Projector</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>WFI-50100</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">WIFI</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>FAIBA 30mbps Wireless Internet</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>TV-21</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">Television</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>45inch LG chrome cast tv</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w60">
+
+                                                    <h6><a title="" href="user-profile.html"><div class=""><strong>SPKR-28</strong></div></a></h6>
+                                                </td>
+                                                <td class="the_user">
+                                                    <h6><strong class="text-uppercase">SPEAKER</strong></h6>
+                                                </td>
+                                                <td>
+                                                    <span>22 May 2018 10:02</span>
+                                                </td>
+                                                <td><span>22 May 2020 12:56</span></td>
+                                                <td><span>Sayonna Apps with 4 mini speakers</span></td>
+                                                <td>Ms Mafuko</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm btn--icon-text ml-2" title="details of laundered item"  data-toggle="modal" data-target="#laundry-details"><i class="zmdi zmdi-eye"></i>Details</button>													
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+			
+                <footer class="footer hidden-xs-down">
+                    <p>A product of Nouveta</p>
+                </footer>
+            </section>
+        </main>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                    <p>Sorry for the inconvenience!</p>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="assets/vendors/jquery/jquery.min.js"></script>
+        <script src="assets/vendors/popper.js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <script src="assets/vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="assets/vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <script src="assets/vendors/flot/jquery.flot.js"></script>
+        <script src="assets/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="assets/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="assets/vendors/jqvmap/jquery.vmap.min.js"></script>
+        <script src="assets/vendors/jqvmap/maps/jquery.vmap.world.js"></script>
+        <script src="assets/vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="assets/vendors/salvattore/salvattore.min.js"></script>
+        <script src="assets/vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+		
+		<script src="assets/vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="assets/vendors/select2/js/select2.full.min.js"></script>
+        <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+        <script src="assets/vendors/moment/moment.min.js"></script>
+        <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+        <script src="assets/vendors/trumbowyg/trumbowyg.min.js"></script>
+        <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/vendors/rateyo/jquery.rateyo.min.js"></script>
+        <script src="assets/vendors/jquery-text-counter/textcounter.min.js"></script>
+        <script src="assets/vendors/autosize/autosize.min.js"></script>
+        <script src="assets/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+
+        <!-- Charts and maps-->
+        <script src="assets/demo/js/flot-charts/curved-line.js"></script>
+        <script src="assets/demo/js/flot-charts/dynamic.js"></script>
+        <script src="assets/demo/js/flot-charts/line.js"></script>
+        <script src="assets/demo/js/flot-charts/chart-tooltips.js"></script>
+        <script src="assets/demo/js/other-charts.js"></script>
+        <script src="assets/demo/js/jqvmap.js"></script>
+
+        <!-- Vendors: Data tables -->
+        <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/dataTables.buttons.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.print.min.js"></script>
+        <script src="assets/vendors/jszip/jszip.min.js"></script>
+        <script src="assets/vendors/datatables-buttons/buttons.html5.min.js"></script>
+
+		
+		<!--high chart-->
+		<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+		<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+
+		<script src="assets/vendors/highcharts/highchart.js"></script>
+		<script src="assets/vendors/highcharts/data.js"></script>
+		<script src="assets/vendors/highcharts/drilldown.js"></script>
+		<script src="assets/vendors/highcharts/exporting.js"></script>
+		<script src="assets/vendors/highcharts/export-data.js"></script>
+		<script src="assets/vendors/highcharts/accesibility.js"></script>
+		<script src="assets/vendors/daterangepicker/daterangepicker.min.js"></script>
+		<script src="assets/js/highcharts/bullet.js"></script>
+		
+		<script src="assets/js/highcharts/highcharts-more.js"></script>
+		<script src="assets/js/highcharts/theme1.js"></script>
+		<!--owl corousel-->
+		<script src="assets/vendors/OwlCarousel/owl.carousel.min.js"></script>
+
+
+        <!-- App functions and actions -->
+     	<script src="assets/js/wow.js"></script>
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/main.js"></script>
+					
+        <script src="assets/js/chart-data/revenue-targets.js"></script>
+        <script src="assets/js/chart-data/revenue-streams.js"></script>
+		<script src="assets/js/chart-data/revenue-by-bank.js"></script>
+        <script src="assets/js/chart-data/revenue-collected.js"></script>
+		<script src="assets/js/chart-data/perfomance.js"></script>
+        <script src="assets/js/chart-data/hourly-revenue-collection.js"></script>
+		
+	
+		<!--map scripts-->
+		
+		<script src="assets/js/chart-data/map-data.js"></script>
+		
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/material-admin/app/2.6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2020 11:34:43 GMT -->
+</html>
