@@ -1,0 +1,31 @@
+ <% @checkin_reports.each do |cr| %>
+ <tr>
+    <td>
+        <h5><%= cr["customer_names"].titleize() %></h5>
+        <p><a href="mailto:sherehe@email.com"><%= cr["email"] %></a></p>
+    </td>
+
+    <td class="w60">
+        <a title="" href="user-profile.html"><div class=""><%= cr["room_no"] %></div></a>
+    </td>
+
+    <td class="the_user">
+        <h6><strong class="text-uppercase"><%= cr["room_type_description"] %></strong></h6>
+    </td>
+
+    <td>
+        <span><%= cr["start_date"].to_date %></span>
+    </td>
+                                                
+    <td>
+        <a href="tel:+254 712 345 678"><%= cr["phone"] %></a>
+    </td>
+                                                
+    <td>
+        <button class="btn btn-info btn-sm btn--icon-text ml-2" title="deactvate this room"  data-toggle="modal" data-target="#room-details"><i class="zmdi zmdi-eye"></i>Details</button>
+        <button class="btn btn-success btn-sm btn--icon-text ml-2"><i class="zmdi zmdi-print"></i>Print</button>
+        <button class="btn btn-warning btn-sm btn--icon-text ml-2" data-toggle="modal" data-target="#edit-room-booking"><i class="zmdi zmdi-edit"></i>Edit</button>
+        <button class="btn btn-danger btn-sm btn--icon-text ml-2 deactivate-room" title="deactvate this room"  data-toggle="modal" data-target="#deactivate-room"><i class="zmdi zmdi-block"></i>Delete</button>													
+    </td>
+</tr>
+<% end %>                                       
