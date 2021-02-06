@@ -1,5 +1,7 @@
 class ReportsController < ApplicationController
   before_action :current_user
+  # before_action only: [:current_path, :current_controller, :current_action]
+  # console
 
   def bills_reports
   end
@@ -16,6 +18,10 @@ class ReportsController < ApplicationController
   def complaints_reports
     begin
       # get all tickets
+      path = current_path(request.env["PATH_INFO"])
+      controller = current_path(request.env["PATH_INFO"])
+      method = current_action(request.env["PATH_INFO"])
+
       url = URI("https://bookinn.ngrok.io/tickets")
 
       http = Net::HTTP.new(url.host, url.port)

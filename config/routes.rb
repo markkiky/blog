@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # require "sidekiq/batch/web"
 
   mount Sidekiq::Web, at: "/sidekiq"
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => "/cable"
 
   resources :authentications
   resources :bookings
