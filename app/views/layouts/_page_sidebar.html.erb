@@ -58,8 +58,13 @@
                         <%= link_to available_rooms_path do %>
                             <i class="mdi mdi-account-check-outline"></i>Available Rooms
                         <% end %>
+
                     </li>
-                    <li><a href="restaurant/occupied_rooms.html"><i class="mdi mdi-account-cash-outline"></i>Occupied Rooms</a></li>
+                    <li>
+                     <%= link_to occupied_rooms_path do %>
+                            <i class="mdi mdi-account-cash-outline"></i>Occupied Rooms
+                        <% end %>
+                   </li>
                     <li><a href="restaurant/unavailable_rooms.html"><i class="mdi mdi-account-cancel-outline"></i>Unavailable Rooms</a></li>
                     <li>
                         <%= link_to bookings_path do %>
@@ -96,27 +101,27 @@
                 <a href="#"><i class="flaticon-document-1"></i>Reports<i class="zmdi zmdi-caret-down drop-down-icon"></i></a>
                 <ul>
                     <li>
-                        <%= link_to  bills_reports_path do %>
+                        <%= link_to bills_reports_path do %>
                             <i class="mdi mdi-file-document-multiple"></i>Bills
                         <% end %>
                     </li>
                     <li> 
-                        <%= link_to  checkin_reports_path do %>
+                        <%= link_to checkin_reports_path do %>
                             <i class="mdi mdi-account-multiple-plus-outline"></i>Check In
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to  checkout_reports_path do %>
+                        <%= link_to checkout_reports_path do %>
                             <i class="mdi mdi-account-multiple-minus-outline"></i>Check Out
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to  transfers_reports_path do %>
+                        <%= link_to transfers_reports_path do %>
                             <i class="mdi mdi-account-convert-outline"></i>Transfers
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to  complaints_reports_path do %>
+                        <%= link_to complaints_reports_path do %>
                             <i class="mdi mdi-message-alert-outline"></i>Complaints
                         <% end %>
                     </li>
@@ -126,7 +131,7 @@
                         <% end %>
                     </li>
                     <li>
-                        <%= link_to  resources_reports_path do %>
+                        <%= link_to resources_reports_path do %>
                             <i class="mdi mdi-checkbox-multiple-blank-circle-outline"></i>Resources
                         <% end %>
                     </li>                    
@@ -178,7 +183,7 @@
                 </ul>
             </li>
                 <li class="navigation__active mt-4">
-                 <%= link_to logout_path do  %>
+                 <%= link_to logout_path do %>
                     <i class="zmdi zmdi-power"></i> Logout
                 <% end %>
                 </li>

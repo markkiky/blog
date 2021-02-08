@@ -529,9 +529,15 @@ $("#child_check").on("click", function () {
   if (document.getElementById("child_check").checked) {
     $(".child-form").removeClass("d-none");
     $(".adult-form").addClass("d-none");
+    $("#parent_id_no").removeAttr('required')
+    $("#child_id_no").prop('required',true);
+    $("#parent_relation").prop("required", true);
   } else {
     $(".child-form").addClass("d-none");
     $(".adult-form").removeClass("d-none");
+    $("#parent_id_no").prop('required', true)
+    $("#child_id_no").removeAttr('required');
+    $("#parent_relation").removeAttr("required");
   }
 });
 

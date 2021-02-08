@@ -302,36 +302,39 @@
                             </div>
                             <div class="modal-body">
                                 <p>Make changes to initially submitted Details</p>
-                                <form class="with-mpesa animated fade-in">
+
+                                <%= form_with url: "", method: :post, class: "with-mpesa animated fade-in" do |form| %>
                                     <div class="row" >
+
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>
+                                                    <strong>Select Room </strong>  <strong class="text-danger">*</strong>
+                                                    <p class="d-none"><small>Select room from options below</small></p>
+                                                </label>
+                                                <select class="selectpicker form-control show-tick" title="Room Type" data-live-search="true">
+                                                    <option data-tokens="select">-- Select Room --</option>
+                                                    <% @rooms.each do |room| %>
+                                                        <option value="<%= room["id"] %>"><%= room["room_name"] %></option>
+                                                    <% end %>
+                                                    
+                                                    </select>
+                                                    
+                                            </div>
+                                        </div>
 
                                         <div class="col-sm-12">
                                             <div class="form-group"> 
                                                 <label>
-                                                    <strong>Room No.</strong>  <strong class="text-danger">*</strong>
+                                                    <strong>Customer.</strong>  <strong class="text-danger">*</strong>
                                                 </label>      
                                                 <input type="text" class="form-control" placeholder="Enter room number" required>                                                      
                                             </div>
                                         </div>
 
         
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label>
-                                                    <strong>Select Room Type</strong>  <strong class="text-danger">*</strong>
-                                                    <p class="d-none"><small>Select room type from options below</small></p>
-                                                </label>
-                                                <select class="selectpicker form-control show-tick" title="Room Type" data-live-search="true">
-                                                    <option data-tokens="select">-- Select Room Type --</option>
-                                                    <option data-tokens="option 1">Delux</option>
-                                                    <option data-tokens="option 2">Presidential Suite</option>
-                                                    <option data-tokens="option 3">Cabana</option>
-                                                    <option data-tokens="option 4">Adjoining</option>
-                                                    
-                                                    </select>
-                                                    
-                                            </div>
-                                        </div>
+                                        
         
                                         <div class="col-sm-12">
                                             <div class="form-group">
@@ -357,7 +360,8 @@
                                             </div>
                                         </div>                                      
                                     </div>
-                                </form>
+                                
+                                <% end %>
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-dismiss="modal">Dismiss</button>
